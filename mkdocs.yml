@@ -1,3 +1,5 @@
 site_name: The Comprehensive Dynamic Time Warping project
 theme: cinder
- 
+nav:
+  - Home: index.md
+  - FAQ: faq.md

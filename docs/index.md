@@ -1,13 +1,14 @@
-[![](images/thumbs/thumb_example12.png)](images/13.html)
-[![](images/thumbs/thumb_example08.png)](images/9.html)
-[![](images/thumbs/thumb_example18.png)](images/19.html)
-
 # Welcome to the Dynamic Time Warp project!
 
 Comprehensive implementation of Dynamic Time Warping algorithms in R
 and Python.  Supports arbitrary local (eg symmetric, asymmetric,
 slope-limited) and global (windowing) constraints, fast native code,
 several plot styles, and more.
+
+
+[![](images/thumbs/thumb_example12.png)](images/13.html)
+[![](images/thumbs/thumb_example08.png)](images/9.html)
+[![](images/thumbs/thumb_example18.png)](images/19.html)
 
 The R Package
 [dtw](http://cran.r-project.org/web/packages/dtw/index.html) provides
@@ -56,8 +57,8 @@ provides:
     al.)](http://dx.doi.org/10.1016/j.patcog.2007.03.004)
 
 Multivariate timeseries can be aligned with arbitrary local distance
-definitions, leveraging the `proxy::dist` (R) or
-`scipy.spatial.distance.cdist` (Python) function. 
+definitions, leveraging the [`proxy::dist`](https://www.rdocumentation.org/packages/proxy/versions/0.4-23/topics/dist) (R) or
+[`scipy.spatial.distance.cdist`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html) (Python) functions. 
 
 In addition to computing alignments, the package provides:
 
@@ -111,7 +112,6 @@ the examples in the documentation).
 
 ### Quickstart Example
 
-[![](images/thumbs/thumb_example10.png)](images/11.html)
 
     ## A noisy sine wave as query
     idx<-seq(0,6.28,len=100);
@@ -137,8 +137,11 @@ the examples in the documentation).
     rabinerJuangStepPattern(6,"c")
     plot(rabinerJuangStepPattern(6,"c"))
     
-    ## And much more!  
-    Try online
+    ## And much more!
+	
+[![](images/thumbs/thumb_example10.png)](images/11.html) &emsp; &emsp; &emsp;
+[Try online!](https://rnotebook.io/anon/5f3ddc63ac17d7cf/notebooks/Welcome.ipynb)
+
 
 ### Installation
 
@@ -187,7 +190,3 @@ through the [Istituto di Biofisica](http://www.ibf.cnr.it/).
 
   
   
-  
-  
-  
-$Id: index.php 441 2019-07-31 06:53:16Z tonig $
