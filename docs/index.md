@@ -10,11 +10,11 @@ several plot styles, and more.
 [![](images/thumbs/thumb_example08.png)](images/9.html)
 [![](images/thumbs/thumb_example18.png)](images/19.html)
 
-The R Package
+The **R** package
 [dtw](http://cran.r-project.org/web/packages/dtw/index.html) provides
 the most complete, freely-available (GPL) implementation of Dynamic
-Time Warping-type (DTW) algorithms up to date.  The package
-[dtwr](https://pypi.org/project/dtwr/) is a direct Python equivalent.
+Time Warping-type (DTW) algorithms up to date.  The **Python** module
+[dtwr](https://pypi.org/project/dtwr/) is its direct equivalent.
 
 The package is described in a [companion
 paper](http://www.jstatsoft.org/v31/i07/), including detailed
@@ -81,8 +81,8 @@ bioinformatics to chemistry to data mining, have a look at the list of
 [citing
 papers](http://scholar.google.it/scholar?oi=bibs&hl=it&cites=5151555337428350289).
 
-A link to prebuilt documentation is
-[here](http://www.rdocumentation.org/packages/dtw).
+The [R](r.md) and [Python](python.md) pages contain links to
+programming language-specific documentation.
 
 ### Citation
 
@@ -112,62 +112,53 @@ the examples in the documentation).
 
 ### Quickstart Example
 
+```R
+## A noisy sine wave as query
+idx<-seq(0,6.28,len=100);
+query<-sin(idx)+runif(100)/10;
 
-    ## A noisy sine wave as query
-    idx<-seq(0,6.28,len=100);
-    query<-sin(idx)+runif(100)/10;
-    
-    ## A cosine is for template; sin and cos are offset by 25 samples
-    template<-cos(idx)
-    
-    ## Find the best match with the canonical recursion formula
-    library(dtw);
-    alignment<-dtw(query,template,keep=TRUE);
-    
-    ## Display the warping curve, i.e. the alignment curve
-    plot(alignment,type="threeway")
-    
-    ## Align and plot with the Rabiner-Juang type VI-c unsmoothed recursion
-    plot(
-        dtw(query,template,keep=TRUE,
-            step=rabinerJuangStepPattern(6,"c")),
-        type="twoway",offset=-2);
-    
-    ## See the recursion relation, as formula and diagram
-    rabinerJuangStepPattern(6,"c")
-    plot(rabinerJuangStepPattern(6,"c"))
-    
-    ## And much more!
-	
+## A cosine is for template; sin and cos are offset by 25 samples
+template<-cos(idx)
+
+## Find the best match with the canonical recursion formula
+library(dtw);
+alignment<-dtw(query,template,keep=TRUE);
+
+## Display the warping curve, i.e. the alignment curve
+plot(alignment,type="threeway")
+
+## Align and plot with the Rabiner-Juang type VI-c unsmoothed recursion
+plot(
+	dtw(query,template,keep=TRUE,
+		step=rabinerJuangStepPattern(6,"c")),
+	type="twoway",offset=-2);
+
+## See the recursion relation, as formula and diagram
+rabinerJuangStepPattern(6,"c")
+plot(rabinerJuangStepPattern(6,"c"))
+
+## And much more!
+```
 [![](images/thumbs/thumb_example10.png)](images/11.html) &emsp; &emsp; &emsp;
-[Try online!](https://rnotebook.io/anon/5f3ddc63ac17d7cf/notebooks/Welcome.ipynb)
+ [Try it online!](https://rnotebook.io/anon/5f3ddc63ac17d7cf/notebooks/Welcome.ipynb)
 
-
-### Installation
-
-To install the latest [stable
-build](http://cran.r-project.org/web/packages/dtw/index.html) of the
-package (hosted at CRAN), issue the following command in the R
-console:  
-
-    > install.packages("dtw")
-
-  
-
-To get started, begin from the installed documentation:  
-
-    > library(dtw) 
-    > demo(dtw)
-    > ?dtw 
-    > ?plot.dtw
 
 
 ### License
 
-This software is distributed under the terms of the GNU General Public
-License Version 2, June 1991. The terms of this license are in a file
-called COPYING which you should have received with this software and
-which can be displayed by ` RShowDoc("COPYING")`.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+	
 
 ### Contact
 
@@ -188,5 +179,4 @@ I am also interested in hearing from companies seeking to use DTW in a
 commercial setting. I may provide on-site and/or remote consultancy
 through the [Istituto di Biofisica](http://www.ibf.cnr.it/).
 
-  
   

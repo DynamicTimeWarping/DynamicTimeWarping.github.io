@@ -10,3 +10,7 @@ deploy:
 	cd ../DynamicTimeWarping.github.io && \
 	mkdocs gh-deploy --config-file $(here)/mkdocs.yml --remote-branch master
 
+
+pythumbs: docs/py-images/*.png
+	cd docs/py-images && \
+	for i in *.png; do convert -geometry x150 $$i thumbs/$$i; done
