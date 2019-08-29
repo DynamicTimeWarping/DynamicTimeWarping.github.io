@@ -165,9 +165,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 [Toni dot Giorgino](https://sites.google.com/site/tonigiorgino/) at
 gmail.com  
   
-Istituto di Neuroscienze (ISIB-IN-CNR)  
+Istituto di Biofisica (IBF-CNR)  
 Consiglio Nazionale delle Ricerche  
-Padova, Italy  
+c/o Dept. of Biosciences, University of Milan  
+Milano, Italy  
   
 Academic and public research institutions are welcome to invite me for
 discussions or seminars. Please indicate dates, preferred format, and

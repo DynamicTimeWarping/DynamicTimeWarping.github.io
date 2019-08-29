@@ -6,7 +6,7 @@ options. The graphing functions have been re-implemented within the
 `matplotlib` framework.
 
 !!! warning
-    The module name is `dtwr` (note the final `r`) to avoid clashes
+    The module name is `dtwr` (note the final `r`) because of clashes
     with pre-exising packages on PyPi.
 
 
