@@ -13,8 +13,9 @@ several plot styles, and more.
 The [R package
 **dtw**](http://cran.r-project.org/web/packages/dtw/index.html)
 provides the most complete, freely-available (GPL) implementation of
-Dynamic Time Warping-type (DTW) algorithms up to date.  The [**dtwr**
-module on PyPi](https://pypi.org/project/dtwr/) is its direct Python equivalent.
+Dynamic Time Warping-type (DTW) algorithms up to date.  The
+[**dtw-python** module on PyPi](https://pypi.org/project/dtw-python/)
+is its direct Python equivalent.
 
 The package is described in a [companion
 paper](http://www.jstatsoft.org/v31/i07/), including detailed
