@@ -2,8 +2,7 @@
 
 The [dtwr](https://pypi.org/project/dtwr/) module is a faithful Python
 equivalent of the R package; it provides the same algorithms and
-options. The graphing functions have been re-implemented within the
-`matplotlib` framework.
+options. 
 
 !!! warning
     The module name is `dtwr` (note the final `r`) because of clashes
@@ -80,20 +79,21 @@ rabinerJuangStepPattern(6,"c").plot()
 
 ## Implementation differences
 
-### Indexing is 0-based
+### Indices are 0-based
 
 R uses 1-based indexing, whereas Python uses 0-based arrays. Wherever
 indices are returned (most notably in the `.index1`, `.index2`,
 `.index1s` and `.index2s` attributes of alignments), these must be
-assumed to be 0-based in Python. Of note, indices may be used as
-subscripts as expected in both environments.
+assumed to be 0-based in Python. Hence, indices can be used as
+subscripts in both environments as expected.
 
 
 ### Object-orientation
 
-The Python interface has been modeled to be as close as possible to
-the R one. Therefore, object-orientation method calls is only used for
-the `plot()` functions. Note that:
+The Python OO interface is the same as the R one. Therefore, OO method
+calls use the postfix "dot" notation. This mostly affects the `plot()`
+methods. Note that non-overloaded functional style such as
+`dtwPlotThreeWay` are unaffected.  Hence:
 
 ```
 ## In R
@@ -101,10 +101,10 @@ plot(alignment, type="threeway")
 
 ## In Python
 alignment.plot(type="threeway")
+## or
+dtwPlotThreeWay(alignment)
 ```
 
-Non-overloaded functions with explicit names such as `dtwPlotThreeWay`
-work without changes.
 
 ### The alignment class
 
@@ -112,13 +112,12 @@ The class name of alignment objects in `DTW` (all capitals) in Python.
 Attributes are accessed with the usual "dot" notation (R uses `$` as
 for lists).
 
-### Dot vs underscore in argument names
+### Dots vs underscores
 
 R commonly uses the dot (`.`) separator for function argument names,
 while Python uses the underscore (`_`) for the same purpose. The
-function prototypes reflect this difference. Also, only R allows
-abbreviated argument names. Therefore:
-
+function prototypes reflect this difference. Also, Python does not
+accept abbreviated argument names. Therefore:
 
 ```
 ## In R
@@ -127,4 +126,10 @@ alignment = dtw(query, template, keep.int=TRUE)
 ## In Python
 alignment = dtw(query, template, keep_internals=True)
 ```
+
+### Plots
+
+The graphing functions have been re-implemented within the
+`matplotlib` framework. They return `axes` objects, which can be used
+to customize the plot appearance.
 

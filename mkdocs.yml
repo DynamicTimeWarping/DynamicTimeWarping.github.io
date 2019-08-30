@@ -1,4 +1,4 @@
-site_name: The Comprehensive Dynamic Time Warping project
+site_name: The Comprehensive DTW library
 theme: cinder
 nav:
   - Home: index.md
