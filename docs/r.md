@@ -1,4 +1,4 @@
-# The *dtw* package for R
+# *dtw*: Dynamic Time Warping in R
 
 The [dtw](https://cran.r-project.org/package=dtw) package is part of
 CRAN, the Comprehensive R Archive Network. The R version is the

@@ -1,12 +1,12 @@
-# The *dtwr* package for Python
+# *dtw-python*: Dynamic Time Warping in Python
 
-The [dtwr](https://pypi.org/project/dtwr/) module is a faithful Python
-equivalent of the R package; it provides the same algorithms and
-options. 
+The [dtw-python](https://pypi.org/project/dtw-python/) module is a
+faithful Python equivalent of the R package; it provides the same
+algorithms and options.
 
 !!! warning
-    The module name is `dtwr` (note the final `r`) because of clashes
-    with pre-exising packages on PyPi.
+    The (pip) package name is `dtw-python`; the import
+	statement is just `import dtw`.
 
 
 ## Installation
@@ -15,7 +15,7 @@ To install the stable version of the package,
 issue the following command:
 
 ```bash
-pip install dtwr
+pip install dtw-python
 ```
   
 
@@ -24,7 +24,7 @@ pip install dtwr
 Begin from the installed documentation:
 
 ```python
-> from dtwr import *
+> from dtw import *
 > ?dtw
 > help(DTW)
 ```
@@ -50,7 +50,7 @@ query = np.sin(idx) + np.random.uniform(size=100)/10.0
 template = np.cos(idx)
 
 ## Find the best match with the canonical recursion formula
-from dtwr import *
+from dtw import *
 alignment = dtw(query, template, keep_internals=True)
 
 ## Display the warping curve, i.e. the alignment curve
@@ -108,7 +108,7 @@ dtwPlotThreeWay(alignment)
 ### The alignment class
 
 The class name of alignment objects in `DTW` (all capitals) in Python.
-Attributes are accessed with the usual "dot" notation (R uses `$` as
+Its attributes are accessed with the usual "dot" notation (R uses `$` as
 for lists).
 
 ### Dots vs underscores
