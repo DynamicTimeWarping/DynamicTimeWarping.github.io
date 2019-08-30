@@ -10,11 +10,11 @@ several plot styles, and more.
 [![](images/thumbs/thumb_example08.png)](images/9.html)
 [![](images/thumbs/thumb_example18.png)](images/19.html)
 
-The **R** package
-[dtw](http://cran.r-project.org/web/packages/dtw/index.html) provides
-the most complete, freely-available (GPL) implementation of Dynamic
-Time Warping-type (DTW) algorithms up to date.  The **Python** module
-[dtwr](https://pypi.org/project/dtwr/) is its direct equivalent.
+The [R package
+**dtw**](http://cran.r-project.org/web/packages/dtw/index.html)
+provides the most complete, freely-available (GPL) implementation of
+Dynamic Time Warping-type (DTW) algorithms up to date.  The [**dtwr**
+module on PyPi](https://pypi.org/project/dtwr/) is its direct Python equivalent.
 
 The package is described in a [companion
 paper](http://www.jstatsoft.org/v31/i07/), including detailed
@@ -177,7 +177,6 @@ audience type.
 ### Commercial support
 
 I am also interested in hearing from companies seeking to use DTW in a
-commercial setting. I may provide on-site and/or remote consultancy
-through the [Istituto di Biofisica](http://www.ibf.cnr.it/).
+commercial setting. On-site and/or remote consultancy can be
+contracted through the [Biophysics Institute](http://www.ibf.cnr.it/).
 
-  
