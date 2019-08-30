@@ -35,7 +35,7 @@ Begin from the installed documentation:
     minor inconsistencies.
 
 The package documentation can also be [browsed
-online](https://www.rdocumentation.org/packages/dtw).
+online](html/api.html).
 
 ## Quickstart
 
