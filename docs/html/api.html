@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>API &#8212; The dtw-python package 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="countPaths" href="api/dtw.countPaths.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          dtw-python</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.4.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://dynamictimewarping.github.io">The DTW project &#127968;</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Docs <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.countPaths.html">countPaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.dtw.html">dtw</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.dtwPlot.html">dtwPlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.dtwPlotAlignment.html">dtwPlotAlignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.dtwPlotDensity.html">dtwPlotDensity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.dtwPlotThreeWay.html">dtwPlotThreeWay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.dtwPlotTwoWay.html">dtwPlotTwoWay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.itakuraWindow.html">itakuraWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.mvmStepPattern.html">mvmStepPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.noWindow.html">noWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.rabinerJuangStepPattern.html">rabinerJuangStepPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.sakoeChibaWindow.html">sakoeChibaWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.slantedBandWindow.html">slantedBandWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.warp.html">warp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.warpArea.html">warpArea</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.DTW.html">DTW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/dtw.StepPattern.html">StepPattern</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">API</a><ul>
+<li><a class="reference internal" href="#module-dtw">dtw Package</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-dtw">
+<span id="dtw-package"></span><h2>dtw Package<a class="headerlink" href="#module-dtw" title="Permalink to this headline">¶</a></h2>
+<p>Top-level package for the Comprehensive Dynamic Time Warp library.</p>
+<p>Please see the help for the dtw.dtw() function which is the package’s
+main entry point.</p>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.countPaths.html#dtw.countPaths" title="dtw.countPaths"><code class="xref py py-obj docutils literal notranslate"><span class="pre">countPaths</span></code></a>(d[, debug])</p></td>
+<td><p>Count the number of warping paths consistent with the constraints.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/dtw.dtw.html#dtw.dtw" title="dtw.dtw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtw</span></code></a>(x[, y, dist_method, step_pattern, …])</p></td>
+<td><p>Compute Dynamic Time Warp and find optimal alignment between two time series.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.dtwPlot.html#dtw.dtwPlot" title="dtw.dtwPlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtwPlot</span></code></a>(x, type, **kwargs)</p></td>
+<td><p>Plotting of dynamic time warp results</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/dtw.dtwPlotAlignment.html#dtw.dtwPlotAlignment" title="dtw.dtwPlotAlignment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtwPlotAlignment</span></code></a>(d[, xlab, ylab])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.dtwPlotDensity.html#dtw.dtwPlotDensity" title="dtw.dtwPlotDensity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtwPlotDensity</span></code></a>(d[, normalize, xlab, ylab])</p></td>
+<td><p>Display the cumulative cost density with the warping path overimposed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/dtw.dtwPlotThreeWay.html#dtw.dtwPlotThreeWay" title="dtw.dtwPlotThreeWay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtwPlotThreeWay</span></code></a>(d[, xts, yts, …])</p></td>
+<td><p>Plotting of dynamic time warp results: annotated warping function</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.dtwPlotTwoWay.html#dtw.dtwPlotTwoWay" title="dtw.dtwPlotTwoWay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtwPlotTwoWay</span></code></a>(d[, xts, yts, offset, …])</p></td>
+<td><p>Plotting of dynamic time warp results: pointwise comparison</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/dtw.itakuraWindow.html#dtw.itakuraWindow" title="dtw.itakuraWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">itakuraWindow</span></code></a>(iw, jw, query_size, reference_size)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.mvmStepPattern.html#dtw.mvmStepPattern" title="dtw.mvmStepPattern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mvmStepPattern</span></code></a>([elasticity])</p></td>
+<td><p>Minimum Variance Matching algorithm</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/dtw.noWindow.html#dtw.noWindow" title="dtw.noWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">noWindow</span></code></a>(iw, jw, query_size, reference_size)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.rabinerJuangStepPattern.html#dtw.rabinerJuangStepPattern" title="dtw.rabinerJuangStepPattern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rabinerJuangStepPattern</span></code></a>(ptype[, …])</p></td>
+<td><p>Construct a pattern classified according to the Rabiner-Juang scheme (Rabiner1993)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/dtw.sakoeChibaWindow.html#dtw.sakoeChibaWindow" title="dtw.sakoeChibaWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sakoeChibaWindow</span></code></a>(iw, jw, query_size, …)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.slantedBandWindow.html#dtw.slantedBandWindow" title="dtw.slantedBandWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slantedBandWindow</span></code></a>(iw, jw, query_size, …)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/dtw.warp.html#dtw.warp" title="dtw.warp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warp</span></code></a>(d[, index_reference])</p></td>
+<td><p>Apply a warping to a given timeseries</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.warpArea.html#dtw.warpArea" title="dtw.warpArea"><code class="xref py py-obj docutils literal notranslate"><span class="pre">warpArea</span></code></a>(d)</p></td>
+<td><p>Compute Warping Path Area</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/dtw.DTW.html#dtw.DTW" title="dtw.DTW"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DTW</span></code></a>(obj)</p></td>
+<td><p>The results of an alignment operation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/dtw.StepPattern.html#dtw.StepPattern" title="dtw.StepPattern"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StepPattern</span></code></a>(mx[, hint])</p></td>
+<td><p>Step patterns for DTW</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="class-inheritance-diagram">
+<h3>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h3>
+<div class="graphviz"><img src="_images/inheritance-753608bae07fb758277835a1d4f5951367c4f066.png" alt="Inheritance diagram of dtw.dtw.DTW, dtw.stepPattern.StepPattern" class="inheritance graphviz" /></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Toni Giorgino.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
