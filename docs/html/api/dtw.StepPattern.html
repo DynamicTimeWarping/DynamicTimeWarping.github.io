@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>StepPattern &#8212; The dtw-python package 0.4.0 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="DTW" href="dtw.DTW.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../api.html">
+          dtw-python</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.4.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://dynamictimewarping.github.io">The DTW project &#127968;</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../api.html">Docs <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="dtw.countPaths.html">countPaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtw.html">dtw</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlot.html">dtwPlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotAlignment.html">dtwPlotAlignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotDensity.html">dtwPlotDensity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotThreeWay.html">dtwPlotThreeWay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotTwoWay.html">dtwPlotTwoWay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.itakuraWindow.html">itakuraWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.mvmStepPattern.html">mvmStepPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.noWindow.html">noWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html">rabinerJuangStepPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.sakoeChibaWindow.html">sakoeChibaWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.slantedBandWindow.html">slantedBandWindow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warp.html">warp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warpArea.html">warpArea</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dtw.DTW.html">DTW</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">StepPattern</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">StepPattern</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="steppattern">
+<h1>StepPattern<a class="headerlink" href="#steppattern" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dtw.StepPattern">
+<em class="property">class </em><code class="sig-prename descclassname">dtw.</code><code class="sig-name descname">StepPattern</code><span class="sig-paren">(</span><em class="sig-param">mx</em>, <em class="sig-param">hint='NA'</em><span class="sig-paren">)</span><a class="headerlink" href="#dtw.StepPattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Step patterns for DTW</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">stepPattern</span></code> object lists the transitions allowed while searching
+for the minimum-distance path. DTW variants are implemented by passing
+one of the objects described in this page to the <code class="docutils literal notranslate"><span class="pre">stepPattern</span></code>
+argument of the [dtw()] call.</p>
+<p><strong>Details</strong></p>
+<p>A step pattern characterizes the matching model and slope constraint
+specific of a DTW variant. They also known as local- or
+slope-constraints, transition types, production or recursion rules
+(GiorginoJSS).</p>
+<p><strong>Pre-defined step patterns</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Well-known step patterns</span>
+<span class="n">symmetric1</span>
+<span class="n">symmetric2</span>
+<span class="n">asymmetric</span>
+
+<span class="c1">## Step patterns classified according to Rabiner-Juang (Rabiner1993)</span>
+<span class="n">rabinerJuangStepPattern</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span><span class="n">slope_weighting</span><span class="o">=</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="n">smoothed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">## Slope-constrained step patterns from Sakoe-Chiba (Sakoe1978)</span>
+<span class="n">symmetricP0</span><span class="p">;</span>  <span class="n">asymmetricP0</span>
+<span class="n">symmetricP05</span><span class="p">;</span> <span class="n">asymmetricP05</span>
+<span class="n">symmetricP1</span><span class="p">;</span>  <span class="n">asymmetricP1</span>
+<span class="n">symmetricP2</span><span class="p">;</span>  <span class="n">asymmetricP2</span>
+
+<span class="c1">## Step patterns classified according to Rabiner-Myers (Myers1980)</span>
+<span class="n">typeIa</span><span class="p">;</span>   <span class="n">typeIb</span><span class="p">;</span>   <span class="n">typeIc</span><span class="p">;</span>   <span class="n">typeId</span><span class="p">;</span>
+<span class="n">typeIas</span><span class="p">;</span>  <span class="n">typeIbs</span><span class="p">;</span>  <span class="n">typeIcs</span><span class="p">;</span>  <span class="n">typeIds</span><span class="p">;</span>  <span class="c1"># smoothed</span>
+<span class="n">typeIIa</span><span class="p">;</span>  <span class="n">typeIIb</span><span class="p">;</span>  <span class="n">typeIIc</span><span class="p">;</span>  <span class="n">typeIId</span><span class="p">;</span>
+<span class="n">typeIIIc</span><span class="p">;</span> <span class="n">typeIVc</span><span class="p">;</span>
+
+<span class="c1">## Miscellaneous</span>
+<span class="n">mori2006</span><span class="p">;</span>
+<span class="n">rigid</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A variety of classification schemes have been proposed for step
+patterns, including Sakoe-Chiba (Sakoe1978); Rabiner-Juang
+(Rabiner1993); and Rabiner-Myers (Myers1980). The <code class="docutils literal notranslate"><span class="pre">dtw</span></code> package
+implements all of the transition types found in those papers, with the
+exception of Itakura’s and Velichko-Zagoruyko’s steps, which require
+subtly different algorithms (this may be rectified in the future).
+Itakura recursion is almost, but not quite, equivalent to <code class="docutils literal notranslate"><span class="pre">typeIIIc</span></code>.</p>
+<p>For convenience, we shall review pre-defined step patterns grouped by
+classification. Note that the same pattern may be listed under different
+names. Refer to paper (GiorginoJSS) for full details.</p>
+<p><strong>1. Well-known step patterns</strong></p>
+<p>Common DTW implementations are based on one of the following transition
+types.</p>
+<p><code class="docutils literal notranslate"><span class="pre">symmetric2</span></code> is the normalizable, symmetric, with no local slope
+constraints. Since one diagonal step costs as much as the two equivalent
+steps along the sides, it can be normalized dividing by <code class="docutils literal notranslate"><span class="pre">N+M</span></code>
+(query+reference lengths). It is widely used and the default.</p>
+<p><code class="docutils literal notranslate"><span class="pre">asymmetric</span></code> is asymmetric, slope constrained between 0 and 2. Matches
+each element of the query time series exactly once, so the warping path
+<code class="docutils literal notranslate"><span class="pre">index2~index1</span></code> is guaranteed to be single-valued. Normalized by <code class="docutils literal notranslate"><span class="pre">N</span></code>
+(length of query).</p>
+<p><code class="docutils literal notranslate"><span class="pre">symmetric1</span></code> (or White-Neely) is quasi-symmetric, no local constraint,
+non-normalizable. It is biased in favor of oblique steps.</p>
+<p><strong>2. The Rabiner-Juang set</strong></p>
+<p>A comprehensive table of step patterns is proposed in Rabiner-Juang’s
+book (Rabiner1993), tab. 4.5. All of them can be constructed through the
+<code class="docutils literal notranslate"><span class="pre">rabinerJuangStepPattern(type,slope_weighting,smoothed)</span></code> function.</p>
+<p>The classification foresees seven families, labelled with Roman numerals
+I-VII; here, they are selected through the integer argument <code class="docutils literal notranslate"><span class="pre">type</span></code>.
+Each family has four slope weighting sub-types, named in sec. 4.7.2.5 as
+“Type (a)” to “Type (d)”; they are selected passing a character argument
+<code class="docutils literal notranslate"><span class="pre">slope_weighting</span></code>, as in the table below. Furthermore, each subtype
+can be either plain or smoothed (figure 4.44); smoothing is enabled
+setting the logical argument <code class="docutils literal notranslate"><span class="pre">smoothed</span></code>. (Not all combinations of
+arguments make sense.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Subtype</span> <span class="o">|</span> <span class="n">Rule</span>       <span class="o">|</span> <span class="n">Norm</span> <span class="o">|</span> <span class="n">Unbiased</span> 
+<span class="o">--------|------------|------|---------</span>
+   <span class="n">a</span>    <span class="o">|</span> <span class="nb">min</span> <span class="n">step</span>   <span class="o">|</span>  <span class="o">--</span>  <span class="o">|</span>   <span class="n">NO</span> 
+   <span class="n">b</span>    <span class="o">|</span> <span class="nb">max</span> <span class="n">step</span>   <span class="o">|</span>  <span class="o">--</span>  <span class="o">|</span>   <span class="n">NO</span> 
+   <span class="n">c</span>    <span class="o">|</span> <span class="n">Di</span> <span class="n">step</span>    <span class="o">|</span>   <span class="n">N</span>  <span class="o">|</span>  <span class="n">YES</span> 
+   <span class="n">d</span>    <span class="o">|</span> <span class="n">Di</span><span class="o">+</span><span class="n">Dj</span> <span class="n">step</span> <span class="o">|</span> <span class="n">N</span><span class="o">+</span><span class="n">M</span>  <span class="o">|</span>  <span class="n">YES</span> 
+</pre></div>
+</div>
+<p><strong>3. The Sakoe-Chiba set</strong></p>
+<p>Sakoe-Chiba (Sakoe1978) discuss a family of slope-constrained patterns;
+they are implemented as shown in page 47, table I. Here, they are called
+<code class="docutils literal notranslate"><span class="pre">symmetricP&lt;x&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">asymmetricP&lt;x&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> corresponds to
+Sakoe’s integer slope parameter <em>P</em>. Values available are accordingly:
+<code class="docutils literal notranslate"><span class="pre">0</span></code> (no constraint), <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">05</span></code> (one half) and <code class="docutils literal notranslate"><span class="pre">2</span></code>. See
+(Sakoe1978) for details.</p>
+<p><strong>4. The Rabiner-Myers set</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">type&lt;XX&gt;&lt;y&gt;</span></code> step patterns follow the older Rabiner-Myers’
+classification proposed in (Myers1980) and (MRR1980). Note that this is
+a subset of the Rabiner-Juang set (Rabiner1993), and the latter should
+be preferred in order to avoid confusion. <code class="docutils literal notranslate"><span class="pre">&lt;XX&gt;</span></code> is a Roman numeral
+specifying the shape of the transitions; <code class="docutils literal notranslate"><span class="pre">&lt;y&gt;</span></code> is a letter in the
+range <code class="docutils literal notranslate"><span class="pre">a-d</span></code> specifying the weighting used per step, as above;
+<code class="docutils literal notranslate"><span class="pre">typeIIx</span></code> patterns also have a version ending in <code class="docutils literal notranslate"><span class="pre">s</span></code>, meaning the
+smoothing is used (which does not permit skipping points). The
+<code class="docutils literal notranslate"><span class="pre">typeId,</span> <span class="pre">typeIId</span></code> and <code class="docutils literal notranslate"><span class="pre">typeIIds</span></code> are unbiased and symmetric.</p>
+<p><strong>5. Others</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">rigid</span></code> pattern enforces a fixed unitary slope. It only makes
+sense in combination with <code class="docutils literal notranslate"><span class="pre">open_begin=True</span></code>, <code class="docutils literal notranslate"><span class="pre">open_end=True</span></code> to find
+gapless subsequences. It may be seen as the <code class="docutils literal notranslate"><span class="pre">P-&gt;inf</span></code> limiting case in
+Sakoe’s classification.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mori2006</span></code> is Mori’s asymmetric step-constrained pattern (Mori2006).
+It is normalized by the matched reference length.</p>
+<p>[mvmStepPattern()] implements Latecki’s Minimum Variance Matching
+algorithm, and it is described in its own page.</p>
+<p><strong>Methods</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">print_stepPattern</span></code> prints an user-readable description of the
+recurrence equation defined by the given pattern.</p>
+<p><code class="docutils literal notranslate"><span class="pre">plot_stepPattern</span></code> graphically displays the step patterns productions
+which can lead to element (0,0). Weights are shown along the step
+leading to the corresponding element.</p>
+<p><code class="docutils literal notranslate"><span class="pre">t_stepPattern</span></code> transposes the productions and normalization hint so
+that roles of query and reference become reversed.</p>
+<dl class="simple">
+<dt>x<span class="classifier"></span></dt><dd><p>a step pattern object</p>
+</dd>
+<dt>type<span class="classifier"></span></dt><dd><p>path specification, integer 1..7 (see (Rabiner1993), table 4.5)</p>
+</dd>
+<dt>slope_weighting<span class="classifier"></span></dt><dd><p>slope weighting rule: character <cite>“a”</cite> to <cite>“d”</cite> (see (Rabiner1993), sec. 4.7.2.5)</p>
+</dd>
+<dt>smoothed<span class="classifier"></span></dt><dd><p>logical, whether to use smoothing (see (Rabiner1993), fig. 4.44)</p>
+</dd>
+<dt>…<span class="classifier"></span></dt><dd><p>additional arguments to [print()].</p>
+</dd>
+</dl>
+<p>Constructing <code class="docutils literal notranslate"><span class="pre">stepPattern</span></code> objects is tricky and thus undocumented.
+For a commented example please see source code for <code class="docutils literal notranslate"><span class="pre">symmetricP1</span></code>.</p>
+<ul class="simple">
+<li><p>(GiorginoJSS) Toni Giorgino. <em>Computing and Visualizing Dynamic Time
+Warping Alignments in R: The dtw Package.</em> Journal of Statistical
+Software, 31(7), 1-24. <a class="reference external" href="http://www_jstatsoft_org/v31/i07/">http://www_jstatsoft_org/v31/i07/</a></p></li>
+<li><p>(Itakura1975) Itakura, F., <em>Minimum prediction residual principle
+applied to speech recognition,</em> Acoustics, Speech, and Signal
+Processing, IEEE Transactions on , vol.23, no.1, pp. 67-72, Feb 1975.
+URL: <a class="reference external" href="http://dx_doi_org/10.1109/TASSP.1975.1162641">http://dx_doi_org/10.1109/TASSP.1975.1162641</a></p></li>
+<li><p>(MRR1980) Myers, C.; Rabiner, L. &amp; Rosenberg, A. <em>Performance
+tradeoffs in dynamic time warping algorithms for isolated word
+recognition</em>, IEEE Trans. Acoust., Speech, Signal Process., 1980, 28,
+623-635. URL: <a class="reference external" href="http://dx_doi_org/10.1109/TASSP.1980.1163491">http://dx_doi_org/10.1109/TASSP.1980.1163491</a></p></li>
+<li><p>(Mori2006) Mori, A.; Uchida, S.; Kurazume, R.; Taniguchi, R.;
+Hasegawa, T. &amp; Sakoe, H. Early Recognition and Prediction of Gestures
+Proc. 18th International Conference on Pattern Recognition ICPR 2006,
+2006, 3, 560-563. URL: <a class="reference external" href="http://dx_doi_org/10.1109/ICPR.2006.467">http://dx_doi_org/10.1109/ICPR.2006.467</a></p></li>
+<li><p>(Myers1980) Myers, Cory S. <em>A Comparative Study Of Several Dynamic
+Time Warping Algorithms For Speech Recognition</em>, MS and BS thesis,
+Dept. of Electrical Engineering and Computer Science, Massachusetts
+Institute of Technology, archived Jun 20 1980,
+<a class="reference external" href="http://hdl_handle_net/1721.1/27909">http://hdl_handle_net/1721.1/27909</a></p></li>
+<li><p>(Rabiner1993) Rabiner, L. R., &amp; Juang, B.-H. (1993). <em>Fundamentals of
+speech recognition.</em> Englewood Cliffs, NJ: Prentice Hall.</p></li>
+<li><p>(Sakoe1978) Sakoe, H.; Chiba, S., <em>Dynamic programming algorithm
+optimization for spoken word recognition,</em> Acoustics, Speech, and
+Signal Processing, IEEE Transactions on , vol.26, no.1, pp. 43-49,
+Feb 1978 URL:
+<a class="reference external" href="http://ieeexplore_ieee_org/xpls/abs_all_jsp?arnumber=1163055">http://ieeexplore_ieee_org/xpls/abs_all_jsp?arnumber=1163055</a></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dtw</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>The usual (normalizable) symmetric step pattern
+Step pattern recursion, defined as:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>g[i,j] = min(</dt><dd><p>g[i,j-1] + d[i,j] ,
+g[i-1,j-1] + 2 * d[i,j] ,
+g[i-1,j] + d[i,j] ,</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">symmetric2</span><span class="p">)</span>            <span class="c1">#doctest: +NORMALIZE_WHITESPACE</span>
+<span class="go">Step pattern recursion:</span>
+<span class="go"> g[i,j] = min(</span>
+<span class="go">     g[i-1,j-1] + 2 * d[i  ,j  ] ,</span>
+<span class="go">     g[i  ,j-1] +     d[i  ,j  ] ,</span>
+<span class="go">     g[i-1,j  ] +     d[i  ,j  ] ,</span>
+<span class="go"> )</span>
+<span class="go">&lt;BLANKLINE&gt;</span>
+<span class="go">Normalization hint: N+M</span>
+<span class="go">&lt;BLANKLINE&gt;</span>
+</pre></div>
+</div>
+<p>The well-known plotting style for step patterns</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">#TODO plot(symmetricP2,main=&quot;Sakoe&#39;s Symmetric P=2 recursion&quot;)</span>
+</pre></div>
+</div>
+<p>Same example seen in ?dtw , now with asymmetric step pattern</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">reference</span><span class="p">)</span> <span class="o">=</span> <span class="n">dtw_test_data</span><span class="o">.</span><span class="n">sin_cos</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Do the computation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">asy</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="n">reference</span><span class="p">,</span><span class="n">keep_internals</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">step_pattern</span><span class="o">=</span><span class="n">asymmetric</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">#TODO dtwPlot(asy,type=&quot;density&quot;,main=&quot;Sine and cosine, asymmetric step&quot;)</span>
+</pre></div>
+</div>
+<p>Hand-checkable example given in [Myers1980] p 61</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tm</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>                     <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="s2">&quot;F&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dtw.StepPattern.T" title="dtw.StepPattern.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a>()</p></td>
+<td><p>Transpose a step pattern.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dtw.StepPattern.get_n_patterns" title="dtw.StepPattern.get_n_patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_n_patterns</span></code></a>()</p></td>
+<td><p>Number of rules in the recursion.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#dtw.StepPattern.get_n_rows" title="dtw.StepPattern.get_n_rows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_n_rows</span></code></a>()</p></td>
+<td><p>Total number of steps in the recursion.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dtw.StepPattern.plot" title="dtw.StepPattern.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>()</p></td>
+<td><p>Provide a visual description of a StepPattern object</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="dtw.StepPattern.T">
+<code class="sig-name descname">T</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dtw.StepPattern.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transpose a step pattern.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dtw.StepPattern.get_n_patterns">
+<code class="sig-name descname">get_n_patterns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dtw.StepPattern.get_n_patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of rules in the recursion.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dtw.StepPattern.get_n_rows">
+<code class="sig-name descname">get_n_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dtw.StepPattern.get_n_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total number of steps in the recursion.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dtw.StepPattern.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dtw.StepPattern.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide a visual description of a StepPattern object</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Toni Giorgino.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
