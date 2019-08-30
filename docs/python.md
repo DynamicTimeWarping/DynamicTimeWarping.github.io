@@ -73,8 +73,8 @@ rabinerJuangStepPattern(6,"c").plot()
 [![](py-images/thumbs/Figure_1.png)](py-images/Figure_1.png)
 [![](py-images/thumbs/Figure_2.png)](py-images/Figure_2.png)
 [![](py-images/thumbs/Figure_3.png)](py-images/Figure_3.png) &emsp; 
-[Try online!](https://rnotebook.io/anon/5f3ddc63ac17d7cf/notebooks/Welcome.ipynb)
-
+<!-- [Try online!](https://mybinder.org/v2/gh/DynamicTimeWarping/notebooks/master?filepath=quickstart%2FPython.ipynb) -->
+[Try online!](https://colab.research.google.com/drive/1-fbhBlKRrEG8jkqoBAWOAzWaOarDQcDp)
 
 
 ## Implementation differences
@@ -90,10 +90,9 @@ subscripts in both environments as expected.
 
 ### Object-orientation
 
-The Python OO interface is the same as the R one. Therefore, OO method
-calls use the postfix "dot" notation. This mostly affects the `plot()`
-methods. Note that non-overloaded functional style such as
-`dtwPlotThreeWay` are unaffected.  Hence:
+Python OO method calls use the postfix "dot" notation. This mostly
+affects the `plot()` methods. Note that non-overloaded functional
+style such as `dtwPlotThreeWay` are unaffected.  Hence:
 
 ```
 ## In R
