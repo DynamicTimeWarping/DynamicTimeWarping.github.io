@@ -16,3 +16,6 @@ deploy:
 pythumbs: docs/py-images/*.png
 	cd docs/py-images && \
 	for i in *.png; do convert -geometry x150 $$i thumbs/$$i; done
+
+copyapi:
+	cp -a ../dtw-python/docs/_build/html docs/
