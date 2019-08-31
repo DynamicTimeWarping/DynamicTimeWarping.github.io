@@ -35,7 +35,7 @@ Begin from the installed documentation:
     minor inconsistencies.
 
 The package documentation can also be [browsed
-online](html/api.html).
+online](py-api/html/index.html).
 
 ## Quickstart
 
@@ -77,7 +77,7 @@ rabinerJuangStepPattern(6,"c").plot()
 [Try online!](https://colab.research.google.com/drive/1-fbhBlKRrEG8jkqoBAWOAzWaOarDQcDp)
 
 
-## Implementation differences
+## Differences with R
 
 ### Indices are 0-based
 

@@ -33,7 +33,7 @@ mapping itself (warping function). DTW is widely used e.g. for
 classification and clustering tasks in econometrics, chemometrics and
 general timeseries mining.
 
-The R implementation in [dtw](http://www.jstatsoft.org/v31/i07/)
+The implementation in [dtw](http://www.jstatsoft.org/v31/i07/)
 provides:
 
   - arbitrary windowing functions (global constraints), eg. the
@@ -91,20 +91,19 @@ If you use *dtw*, do cite it in any publication reporting results
 obtained with this software. Please follow the directions given in
 `citation("dtw")`, i.e. cite:
 
-> Toni Giorgino (2009). *Computing and Visualizing Dynamic Time Warping
-> Alignments in R: The dtw Package.* Journal of Statistical Software,
-> 31(7), 1-24,
-> [doi:10.18637/jss.v031.i07](http://dx.doi.org/10.18637/jss.v031.i07).
+* Toni Giorgino (2009). *Computing and Visualizing Dynamic Time Warping
+  Alignments in R: The dtw Package.* Journal of Statistical Software,
+  31(7), 1-24, [doi:10.18637/jss.v031.i07](http://dx.doi.org/10.18637/jss.v031.i07).
 
 When using partial matching (unconstrained endpoints via the
 `open.begin`/`open.end` options) and/or normalization strategies, please
 also cite:
 
-> Paolo Tormene, Toni Giorgino, Silvana Quaglini, Mario Stefanelli
-> (2008). Matching Incomplete Time Series with Dynamic Time Warping: An
-> Algorithm and an Application to Post-Stroke Rehabilitation. Artificial
-> Intelligence in Medicine, 45(1), 11-34.
-> [doi:10.1016/j.artmed.2008.11.007](http://dx.doi.org/10.1016/j.artmed.2008.11.007)
+* Paolo Tormene, Toni Giorgino, Silvana Quaglini, Mario Stefanelli
+  (2008). Matching Incomplete Time Series with Dynamic Time Warping: An
+  Algorithm and an Application to Post-Stroke Rehabilitation. Artificial
+  Intelligence in Medicine, 45(1), 11-34.
+  [doi:10.1016/j.artmed.2008.11.007](http://dx.doi.org/10.1016/j.artmed.2008.11.007)
 
 ### Plot gallery
 
