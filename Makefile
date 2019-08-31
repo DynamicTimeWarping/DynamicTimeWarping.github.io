@@ -10,7 +10,7 @@ deploy:
 	git commit -a -m "Deploying"
 	git push
 	cd ../DynamicTimeWarping.github.io && \
-	mkdocs gh-deploy --config-file $(here)/mkdocs.yml --remote-branch master
+	mkdocs gh-deploy --force --config-file $(here)/mkdocs.yml --remote-branch master
 
 
 pythumbs: docs/py-images/*.png
