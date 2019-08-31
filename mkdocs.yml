@@ -1,4 +1,4 @@
-site_name: The Comprehensive DTW library
+site_name: The DTW package
 theme: cinder
 nav:
   - Home: index.md

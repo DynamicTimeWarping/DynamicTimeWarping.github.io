@@ -126,6 +126,7 @@ alignment = dtw(query, template, keep.int=TRUE)
 alignment = dtw(query, template, keep_internals=True)
 ```
 
+
 ### Plots
 
 The graphing functions have been re-implemented within the

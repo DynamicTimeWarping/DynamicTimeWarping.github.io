@@ -107,41 +107,22 @@ also cite:
 
 ### Plot gallery
 
-Go to a [gallery of sample plots](images/index.html) (straight out of
-the examples in the documentation).
+See a [gallery of sample plots](images/index.html), straight out of
+the examples in the documentation.
 
-### Quickstart Example
 
-```R
-## A noisy sine wave as query
-idx<-seq(0,6.28,len=100);
-query<-sin(idx)+runif(100)/10;
+### Available languages
 
-## A cosine is for template; sin and cos are offset by 25 samples
-template<-cos(idx)
+ *  R: in the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
+ *  Python: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
 
-## Find the best match with the canonical recursion formula
-library(dtw);
-alignment<-dtw(query,template,keep=TRUE);
+Both are available for all major platforms.
 
-## Display the warping curve, i.e. the alignment curve
-plot(alignment,type="threeway")
 
-## Align and plot with the Rabiner-Juang type VI-c unsmoothed recursion
-plot(
-	dtw(query,template,keep=TRUE,
-		step=rabinerJuangStepPattern(6,"c")),
-	type="twoway",offset=-2);
+### Quickstart
 
-## See the recursion relation, as formula and diagram
-rabinerJuangStepPattern(6,"c")
-plot(rabinerJuangStepPattern(6,"c"))
-
-## And much more!
-```
-[![](images/thumbs/thumb_example10.png)](images/11.html) &emsp; &emsp; &emsp;
- [Try it online!](https://rnotebook.io/anon/5f3ddc63ac17d7cf/notebooks/Welcome.ipynb)
-
+Ready-to-try examples are available in the [R](r) and [Python](python)
+descriptions linked above.
 
 
 ### License
