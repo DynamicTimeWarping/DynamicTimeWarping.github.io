@@ -1,4 +1,4 @@
-site_name: The DTW package
+site_name: The DTW library
 theme: cinder
 nav:
   - Home: index.md
@@ -8,4 +8,4 @@ nav:
 copyright: 'DTW is &copy; 2006-2019, distributed under the <a href="https://cran.r-project.org/web/licenses/GPL-3">GPLv3 license terms</a>.'
 markdown_extensions:
   - admonition
-  
+google_analytics: ['UA-3201754-1', 'dynamictimewarping.github.io']
