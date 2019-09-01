@@ -88,7 +88,7 @@ assumed to be 0-based in Python. Hence, indices can be used as
 subscripts in both environments as expected.
 
 
-### Object-orientation
+### Object-oriented methods
 
 Python OO method calls use the postfix "dot" notation. This mostly
 affects the `plot()` methods. Note that non-overloaded functional
