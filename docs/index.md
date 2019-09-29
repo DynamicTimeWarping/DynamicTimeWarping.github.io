@@ -111,7 +111,7 @@ See a [gallery of sample plots](images/index.html), straight out of
 the examples in the documentation.
 
 
-### Available languages
+### Languages
 
  *  R: in the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
  *  Python: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
@@ -121,8 +121,8 @@ Both are available for all major platforms.
 
 ### Quickstart
 
-Ready-to-try examples are available in the [R](r) and [Python](python)
-descriptions linked above.
+Ready-to-try examples are available in the [DTW for R](r) and [DTW for
+Python](python) pages.
 
 
 ### License
@@ -158,6 +158,6 @@ audience type.
 ### Commercial support
 
 I am also interested in hearing from companies seeking to use DTW in a
-commercial setting. On-site and/or remote consultancy can be
-contracted through the [Biophysics Institute](http://www.ibf.cnr.it/).
-
+commercial setting.  Companies may contract on-site and
+remote research and development on DTW-based projects through the
+[Biophysics Institute](http://www.ibf.cnr.it/).
