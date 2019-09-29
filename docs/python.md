@@ -34,6 +34,9 @@ Begin from the installed documentation:
     auto-generated from the R version. It may contain 
     minor inconsistencies.
 
+
+## Online documentation
+
 The package documentation can also be [browsed
 online](py-api/html/index.html).
 

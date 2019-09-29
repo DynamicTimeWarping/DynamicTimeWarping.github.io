@@ -25,6 +25,8 @@ Begin from the installed documentation:
 ```
 
 
+## Online documentation
+
 The package manual pages can also be [browsed
 online](https://www.rdocumentation.org/packages/dtw).
 
