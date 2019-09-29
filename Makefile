@@ -23,5 +23,6 @@ pythumbs: docs/py-images/*.png
 	for i in *.png; do convert -geometry x150 $$i thumbs/$$i; done
 
 copyapi:
+	make -C ../dtw-python docs
 	-mkdir -p docs/py-api
 	cp -a ../dtw-python/docs/_build/html docs/py-api
