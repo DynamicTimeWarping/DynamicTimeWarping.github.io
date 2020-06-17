@@ -85,6 +85,33 @@ papers](http://scholar.google.it/scholar?oi=bibs&hl=it&cites=5151555337428350289
 The [R](r.md) and [Python](python.md) pages contain links to
 programming language-specific documentation.
 
+
+### Languages
+
+ *  R: in the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
+ *  Python: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
+
+Both are available for all major platforms.
+
+### Quickstart
+
+Ready-to-try examples are available in the [DTW for R](r) and [DTW for
+Python](python) pages.
+
+
+### Plot gallery
+
+See a [gallery of sample plots](images/index.html), straight out of
+the examples in the documentation.
+
+
+### Source
+
+Full source code is [available from
+GitHub](https://github.com/DynamicTimeWarping) and with the CRAN
+package.
+
+
 ### Citation
 
 If you use *dtw*, do cite it in any publication reporting results
@@ -105,24 +132,6 @@ also cite:
   Intelligence in Medicine, 45(1), 11-34.
   [doi:10.1016/j.artmed.2008.11.007](http://dx.doi.org/10.1016/j.artmed.2008.11.007)
 
-### Plot gallery
-
-See a [gallery of sample plots](images/index.html), straight out of
-the examples in the documentation.
-
-
-### Languages
-
- *  R: in the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
- *  Python: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
-
-Both are available for all major platforms.
-
-
-### Quickstart
-
-Ready-to-try examples are available in the [DTW for R](r) and [DTW for
-Python](python) pages.
 
 
 ### License
