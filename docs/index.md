@@ -69,9 +69,18 @@ In addition to computing alignments, the package provides:
   - functions for applying a warping function, either direct or inverse;
   - fast native (C) core.
 
+
+### Languages
+
+ *  R: in the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
+ *  Python: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
+
+Both are available for all major platforms.
+
+
 ### Documentation
 
-The best place to learn how to use the package (and a hopefully a decent
+The best place to learn how to use the package (and a hopefully a good
 deal of background on DTW) is the companion paper [Computing and
 Visualizing Dynamic Time Warping Alignments in R: The dtw
 Package](http://www.jstatsoft.org/v31/i07/), which the Journal of
@@ -86,13 +95,6 @@ The [R](r.md) and [Python](python.md) pages contain links to
 programming language-specific documentation.
 
 
-### Languages
-
- *  R: in the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
- *  Python: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
-
-Both are available for all major platforms.
-
 ### Quickstart
 
 Ready-to-try examples are available in the [DTW for R](r) and [DTW for
@@ -105,10 +107,10 @@ See a [gallery of sample plots](images/index.html), straight out of
 the examples in the documentation.
 
 
-### Source
+### Source code
 
-Full source code is [available from
-GitHub](https://github.com/DynamicTimeWarping) and with the CRAN
+The source code is [available on
+GitHub](https://github.com/DynamicTimeWarping) and in the CRAN
 package.
 
 

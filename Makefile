@@ -7,8 +7,8 @@ here = $(shell pwd)
 
 # https://www.mkdocs.org/user-guide/deploying-your-docs/
 deploy:
-	rm *~
-	git commit -a -m "Deploying"
+	-rm *~
+	-git commit -a -m "Deploying"
 	git push
 	cd ../DynamicTimeWarping.github.io && \
 	mkdocs gh-deploy --force --config-file $(here)/mkdocs.yml --remote-branch master
