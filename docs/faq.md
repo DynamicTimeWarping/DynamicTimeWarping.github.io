@@ -215,3 +215,16 @@ The sum of costs along my warping path (above) is (starting from
 \[1,1\]) 11+10+2\*10+2\*10+11 = 72 which is correct (=g\[4,4\]) . If
 you follow your backtracking "steepest descent" algorithm (red), you
 get the diagonal 11+2\*11+2\*11+2\*11=77 which is wrong.
+
+
+## Installation issues
+
+#### Python: `undefined symbol: alloca`, or warnings about C99 mode
+
+This is likely due to old compilers. If using `conda`, the
+following may help:
+
+    conda install gcc_linux-64
+	pip install dtw-python
+
+Note that you will have to delete cached `.whl` files.
