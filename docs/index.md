@@ -166,11 +166,12 @@ Consiglio Nazionale delle Ricerche
 c/o Dept. of Biosciences, University of Milan  
 Milano, Italy  
   
-I am happy to contribute support and seminars to academic and public
+I am happy to provide support and seminars to academic and public
 research institutions.  For seminars, please indicate dates, preferred
 format, and audience type.
 
-I am also interested in hearing from companies seeking to use DTW in
-commercial settings.  Research contracts for on-site and remote R&D
+### Commercial support
+
+Research contracts for on-site and remote R&D for commercial companies
 are available through the [Biophysics
-Institute](http://www.ibf.cnr.it/), a public research institution.
+Institute](http://www.ibf.cnr.it/).
