@@ -1,5 +1,13 @@
 # Welcome to the Dynamic Time Warp suite!
 
+The packages [**dtw**](https://cran.r-project.org/package=dtw) for R and
+[**dtw-python**](https://pypi.org/project/dtw-python/) for Python
+provide the most complete, freely-available (GPL) implementation of
+Dynamic Time Warping-type (DTW) algorithms up to date.  They support
+arbitrary local (eg symmetric, asymmetric, slope-limited) and global
+(windowing) constraints, fast native code, several plot styles, and
+more.
+
 DTW is a family of algorithms which compute the local stretch or
 compression to apply to the time axes of two timeseries in order to
 optimally map one (query) onto the other (reference). DTW outputs the
@@ -14,13 +22,6 @@ chemometrics, econometrics, and general timeseries mining.
 [![](images/thumbs/thumb_example08.png)](images/9.html)
 [![](images/thumbs/thumb_example18.png)](images/19.html)
 
-The packages [**dtw**](https://cran.r-project.org/package=dtw) for R and
-[**dtw-python**](https://pypi.org/project/dtw-python/) for Python
-provide the most complete, freely-available (GPL) implementation of
-Dynamic Time Warping-type (DTW) algorithms up to date.  They support
-arbitrary local (eg symmetric, asymmetric, slope-limited) and global
-(windowing) constraints, fast native code, several plot styles, and
-more.
 
 The R package is described in a [companion
 paper](http://www.jstatsoft.org/v31/i07/) which includes detailed
