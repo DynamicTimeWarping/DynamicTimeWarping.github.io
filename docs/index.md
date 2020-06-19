@@ -1,4 +1,4 @@
-# Welcome to the Dynamic Time Warp project!
+# Welcome to the Dynamic Time Warp suite!
 
 Comprehensive implementation of Dynamic Time Warping algorithms in R
 and Python.  Supports arbitrary local (eg symmetric, asymmetric,
@@ -10,18 +10,18 @@ several plot styles, and more.
 [![](images/thumbs/thumb_example08.png)](images/9.html)
 [![](images/thumbs/thumb_example18.png)](images/19.html)
 
-The [R package
-**dtw**](http://cran.r-project.org/web/packages/dtw/index.html)
-provides the most complete, freely-available (GPL) implementation of
-Dynamic Time Warping-type (DTW) algorithms up to date.  The
-[**dtw-python** module on PyPi](https://pypi.org/project/dtw-python/)
-is its direct Python equivalent.
+The package [**dtw** for R](http://cran.r-project.org/web/packages/dtw/index.html)
+and [**dtw-python** for Python](https://pypi.org/project/dtw-python/)
+provide the most complete, freely-available (GPL) implementation of
+Dynamic Time Warping-type (DTW) algorithms up to date.
 
-The package is described in a [companion
+The R package is described in a [companion
 paper](http://www.jstatsoft.org/v31/i07/), including detailed
 instructions and extensive background on things like multivariate
 matching, open-end variants for real-time use, interplay between
-recursion types and length normalization, history, etc.
+recursion types and length normalization, history, etc. The
+[**dtw-python** module on PyPi](https://pypi.org/project/dtw-python/)
+is its direct Python equivalent.
 
 ### Description
 
@@ -57,9 +57,6 @@ provides:
   - the Minimum Variance Matching (MVM) algorithm [(Latecki et
     al.)](http://dx.doi.org/10.1016/j.patcog.2007.03.004)
 
-Multivariate timeseries can be aligned with arbitrary local distance
-definitions, leveraging the [`proxy::dist`](https://www.rdocumentation.org/packages/proxy/versions/0.4-23/topics/dist) (R) or
-[`scipy.spatial.distance.cdist`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html) (Python) functions. 
 
 In addition to computing alignments, the package provides:
 
@@ -69,13 +66,18 @@ In addition to computing alignments, the package provides:
   - functions for applying a warping function, either direct or inverse;
   - fast native (C) core.
 
+Multivariate timeseries can be aligned with arbitrary local distance
+definitions, leveraging the [`proxy::dist`](https://www.rdocumentation.org/packages/proxy/versions/0.4-23/topics/dist) (R) or
+[`scipy.spatial.distance.cdist`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html) (Python) functions. 
+
 
 ### Languages
 
  *  R: in the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
  *  Python: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
 
-Both are available for all major platforms.
+Both are available for all major platforms and regularly tested and
+built via continuous integration.
 
 
 ### Documentation
@@ -86,7 +88,7 @@ Visualizing Dynamic Time Warping Alignments in R: The dtw
 Package](http://www.jstatsoft.org/v31/i07/), which the Journal of
 Statistical Software makes available for free.
 
-To have a look at how the *dtw* package is used in domains ranging from
+To have a look at how the package is used in domains ranging from
 bioinformatics to chemistry to data mining, have a look at the list of
 [citing
 papers](http://scholar.google.it/scholar?oi=bibs&hl=it&cites=5151555337428350289).
@@ -120,19 +122,19 @@ If you use *dtw*, do cite it in any publication reporting results
 obtained with this software. Please follow the directions given in
 `citation("dtw")`, i.e. cite:
 
-* Toni Giorgino (2009). *Computing and Visualizing Dynamic Time Warping
-  Alignments in R: The dtw Package.* Journal of Statistical Software,
-  31(7), 1-24, [doi:10.18637/jss.v031.i07](http://dx.doi.org/10.18637/jss.v031.i07).
+ * Toni Giorgino (2009). *Computing and Visualizing Dynamic Time Warping
+   Alignments in R: The dtw Package.* Journal of Statistical Software,
+   31(7), 1-24, [doi:10.18637/jss.v031.i07](http://dx.doi.org/10.18637/jss.v031.i07).
 
 When using partial matching (unconstrained endpoints via the
 `open.begin`/`open.end` options) and/or normalization strategies, please
 also cite:
 
-* Paolo Tormene, Toni Giorgino, Silvana Quaglini, Mario Stefanelli
-  (2008). Matching Incomplete Time Series with Dynamic Time Warping: An
-  Algorithm and an Application to Post-Stroke Rehabilitation. Artificial
-  Intelligence in Medicine, 45(1), 11-34.
-  [doi:10.1016/j.artmed.2008.11.007](http://dx.doi.org/10.1016/j.artmed.2008.11.007)
+ * Paolo Tormene, Toni Giorgino, Silvana Quaglini, Mario Stefanelli
+   (2008). Matching Incomplete Time Series with Dynamic Time Warping: An
+   Algorithm and an Application to Post-Stroke Rehabilitation. Artificial
+   Intelligence in Medicine, 45(1), 11-34.
+   [doi:10.1016/j.artmed.2008.11.007](http://dx.doi.org/10.1016/j.artmed.2008.11.007)
 
 
 
@@ -154,7 +156,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ### Contact
 
-[Toni dot Giorgino](https://sites.google.com/site/tonigiorgino/) at
+[Toni dot Giorgino](https://www.giorginolab.it) at
 gmail.com  
   
 Istituto di Biofisica (IBF-CNR)  

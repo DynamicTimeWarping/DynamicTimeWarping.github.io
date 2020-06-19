@@ -85,10 +85,10 @@ rabinerJuangStepPattern(6,"c").plot()
 ### Indices are 0-based
 
 R uses 1-based indexing, whereas Python uses 0-based arrays. Wherever
-indices are returned (most notably in the `.index1`, `.index2`,
+indices are returned (most importantly in the `.index1`, `.index2`,
 `.index1s` and `.index2s` attributes of alignments), these must be
 assumed to be 0-based in Python. Hence, indices can be used as
-subscripts in both environments as expected.
+subscripts in both environments as natural.
 
 
 ### Object-oriented methods
@@ -136,3 +136,18 @@ The graphing functions have been re-implemented within the
 `matplotlib` framework. They return `axes` objects, which can be used
 to customize the plot appearance.
 
+
+
+## Installation notes
+
+Pre-installing the `scipy` and `numpy` packages (e.g. with `conda`)
+will speed up installation.
+
+The errors `undefined symbol: alloca` (at runtime), or about
+C99 mode (if compiling from source), are likely due to old
+system or compiler. If using `conda`, the following may help:
+
+    conda install gcc_linux-64
+	pip install dtw-python
+
+Note that you may have to delete cached `.whl` files.

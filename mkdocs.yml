@@ -1,4 +1,4 @@
-site_name: The DTW package
+site_name: The DTW suite
 theme: cinder
 nav:
   - Home: index.md
