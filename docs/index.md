@@ -14,7 +14,7 @@ chemometrics, econometrics, and general timeseries mining.
 [![](images/thumbs/thumb_example08.png)](images/9.html)
 [![](images/thumbs/thumb_example18.png)](images/19.html)
 
-The packages [**dtw**](http://cran.r-project.org/web/packages/dtw/index.html) for R and
+The packages [**dtw**](https://cran.r-project.org/package=dtw) for R and
 [**dtw-python**](https://pypi.org/project/dtw-python/) for Python
 provide the most complete, freely-available (GPL) implementation of
 Dynamic Time Warping-type (DTW) algorithms up to date.  They support
@@ -34,12 +34,12 @@ is its direct Python equivalent.
 
 ### Availability
 
- *  **R**: the [**dtw**](http://cran.r-project.org/web/packages/dtw/index.html) package on CRAN
+ *  **R**: the [**dtw**](https://cran.r-project.org/package=dtw) package on CRAN
  *  **Python**: the [**dtw-python**](https://pypi.org/project/dtw-python/) package on PyPI
 
 Both are available for all major platforms and regularly tested and
-built via continuous integration.  Source code is [available on
-GitHub](https://github.com/DynamicTimeWarping) and in the CRAN
+built via continuous integration.  Source code is available on
+[GitHub](https://github.com/DynamicTimeWarping) and in the CRAN
 package.
 
 
@@ -93,17 +93,17 @@ and extensive background on things like multivariate matching,
 open-end variants for real-time use, interplay between recursion types
 and length normalization, history, etc.
 
-The [R](r.md) and [Python](python.md) pages contain links to
-programming language-specific documentation.
-
 To learn how the **dtw** package is used in domains ranging from
 bioinformatics to chemistry to data mining, please see the list of
 [citing
 papers](http://scholar.google.it/scholar?oi=bibs&hl=it&cites=5151555337428350289).
 
-**Note**: **R** is the prime environment for the DTW suite. Python is
-functionally equivalent, but part of the documentation is translated
-automatically and may not be as pretty.
+
+The [R](r.md) and [Python](python.md) pages contain links to
+programming language-specific documentation.  (Note: R is the prime
+environment for the DTW suite. Python is functionally equivalent, but
+part of the documentation is translated automatically and may not be
+as pretty.)
 
 
 ### Quickstart
@@ -158,6 +158,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ### Contact
 
+I am happy to provide support and seminars to academic and public
+research institutions.  For seminars, please indicate dates, preferred
+format, and audience type.
+
 [Toni dot Giorgino](https://www.giorginolab.it) at
 gmail.com  
   
@@ -166,9 +170,6 @@ Consiglio Nazionale delle Ricerche
 c/o Dept. of Biosciences, University of Milan  
 Milano, Italy  
   
-I am happy to provide support and seminars to academic and public
-research institutions.  For seminars, please indicate dates, preferred
-format, and audience type.
 
 ### Commercial support
 
