@@ -4,31 +4,30 @@ DTW is a family of algorithms which compute the local stretch or
 compression to apply to the time axes of two timeseries in order to
 optimally map one (query) onto the other (reference). DTW outputs the
 remaining cumulative distance between the two and, if desired, the
-mapping itself (warping function). DTW is widely used e.g. for
-classification and clustering tasks in econometrics, chemometrics and
-general timeseries mining.
+mapping itself (warping function). DTW is [widely
+used](http://scholar.google.it/scholar?oi=bibs&hl=it&cites=5151555337428350289)
+for classification and clustering tasks, e.g. in bioinformatics,
+chemometrics, econometrics, and general timeseries mining.
 
 
 [![](images/thumbs/thumb_example12.png)](images/13.html)
 [![](images/thumbs/thumb_example08.png)](images/9.html)
 [![](images/thumbs/thumb_example18.png)](images/19.html)
 
-The packages [**dtw** for
-R](http://cran.r-project.org/web/packages/dtw/index.html) and
-[**dtw-python** for Python](https://pypi.org/project/dtw-python/)
+The packages [**dtw**](http://cran.r-project.org/web/packages/dtw/index.html) for R and
+[**dtw-python**](https://pypi.org/project/dtw-python/) for Python
 provide the most complete, freely-available (GPL) implementation of
 Dynamic Time Warping-type (DTW) algorithms up to date.  They support
 arbitrary local (eg symmetric, asymmetric, slope-limited) and global
 (windowing) constraints, fast native code, several plot styles, and
 more.
 
-
 The R package is described in a [companion
-paper](http://www.jstatsoft.org/v31/i07/), including detailed
+paper](http://www.jstatsoft.org/v31/i07/) which includes detailed
 instructions and extensive background on things like multivariate
 matching, open-end variants for real-time use, interplay between
 recursion types and length normalization, history, etc. The
-[**dtw-python** module on PyPi](https://pypi.org/project/dtw-python/)
+[**dtw-python**](https://pypi.org/project/dtw-python/) module on PyPi
 is its direct Python equivalent.
 
 
@@ -39,9 +38,7 @@ is its direct Python equivalent.
  *  **Python**: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
 
 Both are available for all major platforms and regularly tested and
-built via continuous integration.
-
-The source code is [available on
+built via continuous integration.  Source code is [available on
 GitHub](https://github.com/DynamicTimeWarping) and in the CRAN
 package.
 
@@ -88,26 +85,25 @@ definitions, leveraging the [`proxy::dist`](https://www.rdocumentation.org/packa
 ### Documentation
 
 The best place to learn how to use the package (and a hopefully a good
-deal of background on DTW) is the companion paper [Computing and
+deal of background on DTW) is the companion paper [*Computing and
 Visualizing Dynamic Time Warping Alignments in R: The dtw
-Package](http://www.jstatsoft.org/v31/i07/), which the Journal of
-Statistical Software makes available for free. It includes detailed
-instructions and extensive background on things like multivariate
-matching, open-end variants for real-time use, interplay between
-recursion types and length normalization, history, etc.
-
-To have a look at how the **dtw** package is used in domains ranging from
-bioinformatics to chemistry to data mining, have a look at the list of
-[citing
-papers](http://scholar.google.it/scholar?oi=bibs&hl=it&cites=5151555337428350289).
+Package*](http://www.jstatsoft.org/v31/i07/), freely available from
+the Journal of Statistical Software. It includes detailed instructions
+and extensive background on things like multivariate matching,
+open-end variants for real-time use, interplay between recursion types
+and length normalization, history, etc.
 
 The [R](r.md) and [Python](python.md) pages contain links to
 programming language-specific documentation.
 
-**Note**: **R** is the prime environment for the DTW
-suite. Python's docstrings and the API below are generated
-automatically for the sake of consistency and maintainability, and may
-not be as pretty. 
+To learn how the **dtw** package is used in domains ranging from
+bioinformatics to chemistry to data mining, please see the list of
+[citing
+papers](http://scholar.google.it/scholar?oi=bibs&hl=it&cites=5151555337428350289).
+
+**Note**: **R** is the prime environment for the DTW suite. Python is
+functionally equivalent, but part of the documentation is translated
+automatically and may not be as pretty.
 
 
 ### Quickstart
@@ -170,13 +166,11 @@ Consiglio Nazionale delle Ricerche
 c/o Dept. of Biosciences, University of Milan  
 Milano, Italy  
   
-Academic and public research institutions are welcome to invite me for
-discussions or seminars. Please indicate dates, preferred format, and
-audience type.
+I am happy to contribute support and seminars to academic and public
+research institutions.  For seminars, please indicate dates, preferred
+format, and audience type.
 
-### Commercial support
-
-I am also interested in hearing from companies seeking to use DTW in a
-commercial setting.  Companies may contract on-site and
-remote research and development on DTW-based projects through the
-[Biophysics Institute](http://www.ibf.cnr.it/).
+I am also interested in hearing from companies seeking to use DTW in
+commercial settings.  Research contracts for on-site and remote R&D
+are available through the [Biophysics
+Institute](http://www.ibf.cnr.it/).
