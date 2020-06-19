@@ -34,8 +34,8 @@ is its direct Python equivalent.
 
 ### Availability
 
- *  **R**: as the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
- *  **Python**: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
+ *  **R**: the [**dtw**](http://cran.r-project.org/web/packages/dtw/index.html) package on CRAN
+ *  **Python**: the [**dtw-python**](https://pypi.org/project/dtw-python/) package on PyPI
 
 Both are available for all major platforms and regularly tested and
 built via continuous integration.  Source code is [available on
@@ -173,4 +173,4 @@ format, and audience type.
 I am also interested in hearing from companies seeking to use DTW in
 commercial settings.  Research contracts for on-site and remote R&D
 are available through the [Biophysics
-Institute](http://www.ibf.cnr.it/).
+Institute](http://www.ibf.cnr.it/), a public research institution.
