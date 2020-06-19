@@ -1,19 +1,27 @@
 # Welcome to the Dynamic Time Warp suite!
 
-Comprehensive implementation of Dynamic Time Warping algorithms in R
-and Python.  Supports arbitrary local (eg symmetric, asymmetric,
-slope-limited) and global (windowing) constraints, fast native code,
-several plot styles, and more.
+DTW is a family of algorithms which compute the local stretch or
+compression to apply to the time axes of two timeseries in order to
+optimally map one (query) onto the other (reference). DTW outputs the
+remaining cumulative distance between the two and, if desired, the
+mapping itself (warping function). DTW is widely used e.g. for
+classification and clustering tasks in econometrics, chemometrics and
+general timeseries mining.
 
 
 [![](images/thumbs/thumb_example12.png)](images/13.html)
 [![](images/thumbs/thumb_example08.png)](images/9.html)
 [![](images/thumbs/thumb_example18.png)](images/19.html)
 
-The package [**dtw** for R](http://cran.r-project.org/web/packages/dtw/index.html)
-and [**dtw-python** for Python](https://pypi.org/project/dtw-python/)
+The packages [**dtw** for
+R](http://cran.r-project.org/web/packages/dtw/index.html) and
+[**dtw-python** for Python](https://pypi.org/project/dtw-python/)
 provide the most complete, freely-available (GPL) implementation of
-Dynamic Time Warping-type (DTW) algorithms up to date.
+Dynamic Time Warping-type (DTW) algorithms up to date.  They support
+arbitrary local (eg symmetric, asymmetric, slope-limited) and global
+(windowing) constraints, fast native code, several plot styles, and
+more.
+
 
 The R package is described in a [companion
 paper](http://www.jstatsoft.org/v31/i07/), including detailed
@@ -23,18 +31,24 @@ recursion types and length normalization, history, etc. The
 [**dtw-python** module on PyPi](https://pypi.org/project/dtw-python/)
 is its direct Python equivalent.
 
-### Description
 
-DTW is a family of algorithms which compute the local stretch or
-compression to apply to the time axes of two timeseries in order to
-optimally map one (query) onto the other (reference). DTW outputs the
-remaining cumulative distance between the two and, if desired, the
-mapping itself (warping function). DTW is widely used e.g. for
-classification and clustering tasks in econometrics, chemometrics and
-general timeseries mining.
 
-The implementation in [dtw](http://www.jstatsoft.org/v31/i07/)
-provides:
+### Availability
+
+ *  **R**: as the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
+ *  **Python**: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
+
+Both are available for all major platforms and regularly tested and
+built via continuous integration.
+
+The source code is [available on
+GitHub](https://github.com/DynamicTimeWarping) and in the CRAN
+package.
+
+
+### Features
+
+The implementation provides:
 
   - arbitrary windowing functions (global constraints), eg. the
     [Sakoe-Chiba
@@ -71,30 +85,29 @@ definitions, leveraging the [`proxy::dist`](https://www.rdocumentation.org/packa
 [`scipy.spatial.distance.cdist`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html) (Python) functions. 
 
 
-### Languages
-
- *  R: in the [dtw package](http://cran.r-project.org/web/packages/dtw/index.html) on CRAN
- *  Python: as the [`dtw-python`](https://pypi.org/project/dtw-python/) pip package
-
-Both are available for all major platforms and regularly tested and
-built via continuous integration.
-
-
 ### Documentation
 
 The best place to learn how to use the package (and a hopefully a good
 deal of background on DTW) is the companion paper [Computing and
 Visualizing Dynamic Time Warping Alignments in R: The dtw
 Package](http://www.jstatsoft.org/v31/i07/), which the Journal of
-Statistical Software makes available for free.
+Statistical Software makes available for free. It includes detailed
+instructions and extensive background on things like multivariate
+matching, open-end variants for real-time use, interplay between
+recursion types and length normalization, history, etc.
 
-To have a look at how the package is used in domains ranging from
+To have a look at how the **dtw** package is used in domains ranging from
 bioinformatics to chemistry to data mining, have a look at the list of
 [citing
 papers](http://scholar.google.it/scholar?oi=bibs&hl=it&cites=5151555337428350289).
 
 The [R](r.md) and [Python](python.md) pages contain links to
 programming language-specific documentation.
+
+**Note**: **R** is the prime environment for the DTW
+suite. Python's docstrings and the API below are generated
+automatically for the sake of consistency and maintainability, and may
+not be as pretty. 
 
 
 ### Quickstart
@@ -107,13 +120,6 @@ Python](python) pages.
 
 See a [gallery of sample plots](images/index.html), straight out of
 the examples in the documentation.
-
-
-### Source code
-
-The source code is [available on
-GitHub](https://github.com/DynamicTimeWarping) and in the CRAN
-package.
 
 
 ### Citation
