@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>dtw &#8212; The dtw-python package 1.0.2 documentation</title>
+    <title>dtw &#8212; The dtw-python package 1.1.6 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -38,13 +38,13 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           dtw-python</a>
-        <span class="navbar-text navbar-version pull-left"><b>1.0.2</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>1.1.6</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW project</a></li>
+                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW suite</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -234,7 +234,7 @@ and Motion</em>. Springer Berlin Heidelberg; 2007. p. 69-84.
 </ol>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dtw</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dtw</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>A noisy sine wave as query</p>
@@ -269,12 +269,16 @@ Equivalent to: plot(alignment,type=”alignment”)</p>
 <p>Subsetting allows warping and unwarping of
 timeseries according to the warping curve.
 See first example below.</p>
-<p>Most useful: plot the warped query along with reference
-&gt;&gt;&gt; plt.plot(reference);
-… plt.plot(alignment.index2,query[alignment.index1])  # doctest: +SKIP</p>
-<p>Plot the (unwarped) query and the inverse-warped reference
-&gt;&gt;&gt; plt.plot(query)                                     # doctest: +SKIP
-… plt.plot(alignment.index1,reference[alignment.index2])</p>
+<p>Most useful: plot the warped query along with reference</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reference</span><span class="p">);</span>
+<span class="gp">... </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alignment</span><span class="o">.</span><span class="n">index2</span><span class="p">,</span><span class="n">query</span><span class="p">[</span><span class="n">alignment</span><span class="o">.</span><span class="n">index1</span><span class="p">])</span>  <span class="c1"># doctest: +SKIP</span>
+</pre></div>
+</div>
+<p>Plot the (unwarped) query and the inverse-warped reference</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>                                     <span class="c1"># doctest: +SKIP</span>
+<span class="gp">... </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alignment</span><span class="o">.</span><span class="n">index1</span><span class="p">,</span><span class="n">reference</span><span class="p">[</span><span class="n">alignment</span><span class="o">.</span><span class="n">index2</span><span class="p">])</span>
+</pre></div>
+</div>
 <p>A hand-checkable example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ldist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>                    <span class="c1"># Matrix of ones</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ldist</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ldist</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>           <span class="c1"># Mark a clear path of zeroes</span>
@@ -287,10 +291,14 @@ See first example below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">da</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">(</span><span class="n">ldist</span><span class="p">,</span><span class="n">step_pattern</span><span class="o">=</span><span class="n">asymmetric</span><span class="p">)</span>   <span class="c1"># Also compute the asymmetric</span>
 </pre></div>
 </div>
-<p>Symmetric: alignment follows the low-distance marked path
-&gt;&gt;&gt; plt.plot(ds.index1,ds.index2)             # doctest: +SKIP</p>
-<p>Asymmetric: visiting 1 is required twice
-&gt;&gt;&gt; plt.plot(da.index1,da.index2,’ro’)        # doctest: +SKIP</p>
+<p>Symmetric: alignment follows the low-distance marked path</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">index1</span><span class="p">,</span><span class="n">ds</span><span class="o">.</span><span class="n">index2</span><span class="p">)</span>             <span class="c1"># doctest: +SKIP</span>
+</pre></div>
+</div>
+<p>Asymmetric: visiting 1 is required twice</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">index1</span><span class="p">,</span><span class="n">da</span><span class="o">.</span><span class="n">index2</span><span class="p">,</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span>        <span class="c1"># doctest: +SKIP</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">distance</span>
 <span class="go">2.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">da</span><span class="o">.</span><span class="n">distance</span>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Welcome to the dtw-python package &#8212; The dtw-python package 1.0.2 documentation</title>
+    <title>Welcome to the dtw-python package &#8212; The dtw-python package 1.1.6 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -37,13 +37,13 @@
         </button>
         <a class="navbar-brand" href="#">
           dtw-python</a>
-        <span class="navbar-text navbar-version pull-left"><b>1.0.2</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>1.1.6</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW project</a></li>
+                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW suite</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -90,6 +90,7 @@
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
 <li><a class="reference internal" href="#features">Features</a></li>
 <li><a class="reference internal" href="#citation">Citation</a></li>
+<li><a class="reference internal" href="#source-code">Source code</a></li>
 <li><a class="reference internal" href="#license">License</a><ul>
 <li><a class="reference internal" href="#credits">Credits</a></li>
 </ul>
@@ -143,9 +144,12 @@ implementation of Dynamic Time Warping-type (DTW) algorithms up to
 date. It is a faithful Python equivalent of <a class="reference external" href="https://cran.r-project.org/package=dtw">R’s DTW package on CRAN</a>.  Supports arbitrary local (e.g.
 symmetric, asymmetric, slope-limited) and global (windowing)
 constraints, fast native code, several plot styles, and more.</p>
+<a class="reference external image-reference" href="https://github.com/DynamicTimeWarping/dtw-python/actions"><img alt="https://github.com/DynamicTimeWarping/dtw-python/workflows/Build%20and%20upload%20to%20PyPI/badge.svg" src="https://github.com/DynamicTimeWarping/dtw-python/workflows/Build%20and%20upload%20to%20PyPI/badge.svg" /></a>
+<a class="reference external image-reference" href="https://badge.fury.io/py/dtw-python"><img alt="https://badge.fury.io/py/dtw-python.svg" src="https://badge.fury.io/py/dtw-python.svg" /></a>
+<a class="reference external image-reference" href="https://codecov.io/gh/DynamicTimeWarping/dtw-python"><img alt="https://codecov.io/gh/DynamicTimeWarping/dtw-python/branch/master/graph/badge.svg" src="https://codecov.io/gh/DynamicTimeWarping/dtw-python/branch/master/graph/badge.svg" /></a>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
-<p>Please refer to the main <a class="reference external" href="https://dynamictimewarping.github.io">DTW project homepage</a> for the full documentation
+<p>Please refer to the main <a class="reference external" href="https://dynamictimewarping.github.io">DTW suite homepage</a> for the full documentation
 and background.</p>
 <p>The best place to learn how to use the package (and a hopefully a
 decent deal of background on DTW) is the companion paper <a class="reference external" href="http://www.jstatsoft.org/v31/i07/">Computing
@@ -158,12 +162,8 @@ recursion types and length normalization, history, etc.</p>
 bioinformatics to chemistry to data mining, have a look at the list of
 <a class="reference external" href="http://scholar.google.it/scholar?oi=bibs&amp;hl=it&amp;cites=5151555337428350289">citing
 papers</a>.</p>
-<p>Links to prebuilt documentation are available
-<a class="reference external" href="http://www.rdocumentation.org/packages/dtw">for R</a>
-and
-<a class="reference external" href="https://dynamictimewarping.github.io/py-api/html/">Python</a>.</p>
-<p><strong>Note</strong>: <strong>R</strong> is the preferred environment for the DTW
-project. Python’s docstrings and the API below are generated
+<p><strong>Note</strong>: <strong>R</strong> is the prime environment for the DTW
+suite. Python’s docstrings and the API below are generated
 automatically for the sake of consistency and maintainability, and may
 not be as pretty.</p>
 </div>
@@ -195,9 +195,6 @@ step)</p></li>
 <li><p>the Minimum Variance Matching (MVM) algorithm <a class="reference external" href="http://dx.doi.org/10.1016/j.patcog.2007.03.004">(Latecki et
 al.)</a></p></li>
 </ul>
-<p>Multivariate timeseries can be aligned with arbitrary local distance
-definitions, leveraging the <em>{proxy}dist</em> function. DTW itself becomes a
-distance function with the <em>dist</em> semantics.</p>
 <p>In addition to computing alignments, the package provides:</p>
 <ul class="simple">
 <li><p>methods for plotting alignments and warping functions in several
@@ -206,6 +203,9 @@ classic styles (see plot gallery);</p></li>
 <li><p>functions for applying a warping function, either direct or inverse;</p></li>
 <li><p>a fast native (C) core.</p></li>
 </ul>
+<p>Multivariate timeseries can be aligned with arbitrary local distance
+definitions, leveraging the [<cite>proxy::dist</cite>](<a class="reference external" href="https://www.rdocumentation.org/packages/proxy/versions/0.4-23/topics/dist">https://www.rdocumentation.org/packages/proxy/versions/0.4-23/topics/dist</a>) (R) or
+[<cite>scipy.spatial.distance.cdist</cite>](<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html</a>) (Python) functions.</p>
 </div>
 <div class="section" id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h2>
@@ -223,6 +223,12 @@ classic styles (see plot gallery);</p></li>
 </ol>
 </li>
 </ul>
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>Releases (stable versions) are available in the <a class="reference external" href="https://pypi.org/project/dtw-python/">dtw-python project on
+PyPi</a>. Development
+occurs on GitHub at &lt;<a class="reference external" href="https://github.com/DynamicTimeWarping/dtw-python">https://github.com/DynamicTimeWarping/dtw-python</a>&gt;.</p>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>

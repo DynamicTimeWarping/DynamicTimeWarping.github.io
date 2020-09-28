@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>warp &#8212; The dtw-python package 1.0.2 documentation</title>
+    <title>warp &#8212; The dtw-python package 1.1.6 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -38,13 +38,13 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           dtw-python</a>
-        <span class="navbar-text navbar-version pull-left"><b>1.0.2</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>1.1.6</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW project</a></li>
+                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW suite</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -148,7 +148,7 @@ interpolation.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dtw</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">dtw</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -182,8 +182,8 @@ exactly one image (q-&gt;t is a function)</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">wt</span> <span class="o">=</span> <span class="n">warp</span><span class="p">(</span><span class="n">alignment</span><span class="p">,</span><span class="n">index_reference</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1">#TODO plot(query,type=&quot;l&quot;,col=&quot;blue&quot;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1">#TODO points(reference[wt]);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="s2">&quot;b-&quot;</span><span class="p">)</span>                       <span class="c1"># doctest: +SKIP</span>
+<span class="gp">... </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="n">wt</span><span class="p">],</span> <span class="s2">&quot;ok&quot;</span><span class="p">,</span> <span class="n">facecolors</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
