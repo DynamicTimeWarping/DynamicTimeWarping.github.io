@@ -29,7 +29,9 @@ jobs:
       - name: Build API docs
         run: |
            pip3 install ./dtw-python
-           make -C dtw-python docs
+           rm -rf dtw-python/docs/api
+           make -C dtw-python/docs clean
+           make -C dtw-python/docs html
            mkdir -p docs/py-api
            cp -a dtw-python/docs/_build/html docs/py-api
 
