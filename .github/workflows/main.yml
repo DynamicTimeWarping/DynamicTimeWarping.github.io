@@ -24,7 +24,7 @@ jobs:
 #        uses: actions/setup-python@v4 
 
       - name: Install Sphinx
-        run: sudo apt-get install -y python3-sphinx python-sphinx-bootstrap-theme
+        run: sudo apt-get install -y python3-sphinx python3-sphinx-bootstrap-theme
 
       - name: Build API docs
         run: |
