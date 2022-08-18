@@ -14,6 +14,24 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v1
 
+      - name: Checkout dtw-python repo
+        uses: actions/checkout@v3
+        with:
+          repository: DynamicTimeWarping/dtw-python 
+          path: dtw-python
+
+#      - name: Install Python
+#        uses: actions/setup-python@v4 
+
+      - name: Install Sphinx
+        run: sudo apt-get install -y python3-sphinx
+
+      - name: Build API docs
+        run: |
+           make -C dtw-python docs
+           mkdir -p docs/py-api
+           cp -a dtw-python/docs/_build/html docs/py-api
+
       - name: Run MkDocs docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
