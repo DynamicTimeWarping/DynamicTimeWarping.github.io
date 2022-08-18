@@ -29,9 +29,10 @@ jobs:
         with:
           python-version: '3.9' 
 
-      - run: pip install sphinx sphinx-automodapi sphinx-bootstrap-theme
-
-      - run: sudo apt-get install -y graphviz
+      - name: (API) Install dependencies
+        run: |
+          sudo apt-get install -y graphviz
+          pip install sphinx sphinx-automodapi sphinx-bootstrap-theme numpy scipy
 
       - name: (API) Build DTW
         run: pip3 install -e dtw-python
