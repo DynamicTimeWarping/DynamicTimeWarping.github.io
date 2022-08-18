@@ -30,8 +30,10 @@ jobs:
         run: |
            pip3 install ./dtw-python
            rm -rf dtw-python/docs/api
-           make -C dtw-python/docs clean
-           make -C dtw-python/docs html
+           dtw
+           cd dtw-python/docs
+           make clean
+           make html
            mkdir -p docs/py-api
            cp -a dtw-python/docs/_build/html docs/py-api
 
