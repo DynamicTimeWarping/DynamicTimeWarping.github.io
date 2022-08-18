@@ -18,25 +18,26 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v1
 
-      - name: Checkout dtw-python repo
+      - name: (API) Checkout dtw-python repo
         uses: actions/checkout@v3
         with:
           repository: DynamicTimeWarping/dtw-python 
           path: dtw-python
 
-      - name: Install Python
+      - name: (API) Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9' 
 
-      - name: Install Sphinx
-        run: pip install sphinx sphinx-automodapi sphinx-bootstrap-theme
+      - run: pip install sphinx sphinx-automodapi sphinx-bootstrap-theme
 
       - run: sudo apt-get install -y graphviz
 
-      - name: Build API docs
+      - name: (API) Build DTW
+        run: pip3 install -e dtw-python
+
+      - name: (API) Build docs
         run: |
-           pip3 install -e dtw-python
            rm -rf dtw-python/docs/api
            make -C dtw-python/docs clean
            make -C dtw-python/docs html
