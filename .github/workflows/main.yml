@@ -20,20 +20,21 @@ jobs:
           repository: DynamicTimeWarping/dtw-python 
           path: dtw-python
 
-#      - name: Install Python
-#        uses: actions/setup-python@v4 
+      - name: Install Python
+        uses: actions/setup-python@v4
 
       - name: Install Sphinx
-        run: sudo apt-get install -y python3-sphinx python3-sphinx-bootstrap-theme
+        run: pip install sphinx sphinx-automodapi sphinx-bootstrap-theme
+
+#      - name: Install Sphinx
+#        run: sudo apt-get install -y python3-sphinx python3-sphinx-bootstrap-theme
 
       - name: Build API docs
         run: |
-           pip3 install ./dtw-python
+           pip3 install -e dtw-python
            rm -rf dtw-python/docs/api
-           dtw
-           cd dtw-python/docs
-           make clean
-           make html
+           make -C dtw-python/docs clean
+           make -C dtw-python/docs html
            mkdir -p docs/py-api
            cp -a dtw-python/docs/_build/html docs/py-api
 
