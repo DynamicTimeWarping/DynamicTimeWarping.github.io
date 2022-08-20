@@ -21,6 +21,11 @@ jobs:
           repository: DynamicTimeWarping/dtw-python 
           path: dtw-python
 
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: graphviz
+          version: 1.0
+          
       - name: Install Python
         uses: actions/setup-python@v4
         with:
@@ -28,10 +33,7 @@ jobs:
           cache: 'pip'
           cache-dependency-path: apidocs-requirements.txt
 
-      - uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: graphviz
-          version: 1.0
+       - run: pip install -r apidocs-requirements.txt
 
 #      - name: Install dependencies
 #        run: |
