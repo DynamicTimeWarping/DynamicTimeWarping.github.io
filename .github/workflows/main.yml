@@ -33,7 +33,7 @@ jobs:
           cache: 'pip'
           cache-dependency-path: apidocs-requirements.txt
 
-       - run: pip install -r apidocs-requirements.txt
+      - run: pip install -r apidocs-requirements.txt
 
 #      - name: Install dependencies
 #        run: |
