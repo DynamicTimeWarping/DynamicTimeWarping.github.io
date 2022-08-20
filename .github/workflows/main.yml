@@ -1,6 +1,6 @@
 # From https://github.com/marketplace/actions/deploy-mkdocs
 
-name: Publish docs via MkDocs + GitHub Pages
+name: Publish via MkDocs
 on:
   push:
     branches:
@@ -11,13 +11,10 @@ on:
 #        run: sudo apt-get install -y python3-sphinx python3-sphinx-bootstrap-theme
 
 jobs:
-  build:
-    name: Deploy docs
+  apidocs:
+    name: Build API docs
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout master
-        uses: actions/checkout@v1
-
+    steps: 
       - name: (API) Checkout dtw-python repo
         uses: actions/checkout@v3
         with:
@@ -42,6 +39,30 @@ jobs:
            rm -rf dtw-python/docs/api
            make -C dtw-python/docs clean
            make -C dtw-python/docs html
+           
+      - name: (API) Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: api-docs
+          if-no-files-found: error 
+          path: dtw-python/docs/_build/html
+
+
+  site:
+    name: Build website
+    needs: apidocs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v1
+
+      - name: Download API docs
+        uses: actions/download-artifact@v3
+        with:
+          name: api-docs
+      
+      - run: |
+           ls -lR
            mkdir -p docs/py-api
            cp -a dtw-python/docs/_build/html docs/py-api
 
