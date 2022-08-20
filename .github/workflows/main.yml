@@ -39,7 +39,7 @@ jobs:
            rm -rf dtw-python/docs/api
            make -C dtw-python/docs clean
            make -C dtw-python/docs html
-           tar -cvf api-docs.tar -C dtw-python/docs/_build/html
+           tar -cvf api-docs.tar -C dtw-python/docs/_build/html .
            
       - name: (API) Upload artifact
         uses: actions/upload-artifact@v3
