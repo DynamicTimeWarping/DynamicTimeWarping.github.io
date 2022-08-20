@@ -39,13 +39,14 @@ jobs:
            rm -rf dtw-python/docs/api
            make -C dtw-python/docs clean
            make -C dtw-python/docs html
+           tar -cvf api-docs.tar -C dtw-python/docs/_build/html
            
       - name: (API) Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: api-docs
+          path: api-docs.tar
           if-no-files-found: error 
-          path: dtw-python/docs/_build/html
 
 
   site:
@@ -62,9 +63,10 @@ jobs:
           name: api-docs
       
       - run: |
-           ls -lR
            mkdir -p docs/py-api
-           cp -a dtw-python/docs/_build/html docs/py-api
+           tar -xvf api-docs.tar -C docs/py-api
+           ls -lR
+           # cp -a dtw-python/docs/_build/html docs/py-api
 
       - name: Run MkDocs docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
