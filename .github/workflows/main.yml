@@ -15,33 +15,33 @@ jobs:
     name: Build API docs
     runs-on: ubuntu-latest
     steps: 
-      - name: (API) Checkout dtw-python repo
+      - name: Checkout dtw-python repo
         uses: actions/checkout@v3
         with:
           repository: DynamicTimeWarping/dtw-python 
           path: dtw-python
 
-      - name: (API) Install Python
+      - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9' 
 
-      - name: (API) Install dependencies
+      - name: Install dependencies
         run: |
           sudo apt-get install -y graphviz
           pip install sphinx sphinx-automodapi sphinx-bootstrap-theme numpy scipy
 
-      - name: (API) Build DTW in-place
+      - name: Build DTW in-place
         run: pip3 install -e dtw-python
 
-      - name: (API) Build docs
+      - name: Build docs
         run: |
            rm -rf dtw-python/docs/api
            make -C dtw-python/docs clean
            make -C dtw-python/docs html
            tar -cvf api-docs.tar -C dtw-python/docs/_build/html .
            
-      - name: (API) Upload artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: api-docs
@@ -62,11 +62,13 @@ jobs:
         with:
           name: api-docs
       
-      - run: |
+      - name: Extract API docs
+        # cp -a dtw-python/docs/_build/html docs/py-api
+        run: |
            mkdir -p docs/py-api
-           tar -xvf api-docs.tar -C docs/py-api
+           tar -xf api-docs.tar -C docs/py-api
+           echo Dir is now...
            ls -lR
-           # cp -a dtw-python/docs/_build/html docs/py-api
 
       - name: Run MkDocs docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
