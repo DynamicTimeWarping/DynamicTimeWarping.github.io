@@ -37,8 +37,7 @@ Begin from the installed documentation:
 
 ## Online documentation
 
-The package documentation can also be [browsed
-online](py-api/html/index.html).
+The package documentation can also be [browsed online](py-api/html/index.html).
 
 ## Quickstart
 
@@ -76,8 +75,8 @@ rabinerJuangStepPattern(6,"c").plot()
 [![](py-images/thumbs/Figure_1.png)](py-images/Figure_1.png)
 [![](py-images/thumbs/Figure_2.png)](py-images/Figure_2.png)
 [![](py-images/thumbs/Figure_3.png)](py-images/Figure_3.png) &emsp; 
-<!-- [Try online!](https://mybinder.org/v2/gh/DynamicTimeWarping/notebooks/master?filepath=quickstart%2FPython.ipynb) -->
-[Try online!](https://colab.research.google.com/drive/1-fbhBlKRrEG8jkqoBAWOAzWaOarDQcDp)
+
+[Try online!](https://colab.research.google.com/github/DynamicTimeWarping/notebooks/blob/master/Python_DTW_Quickstart.ipynb)
 
 
 ## Differences with R
