@@ -2,7 +2,7 @@
 
 ## General
 
-#### *How do I choose a step pattern?*
+### *How do I choose a step pattern?*
 
 This question has been raised on Stack Overflow; see
 [here](http://stackoverflow.com/questions/30247132/r-dtw-package-cumulative-cost-matrix-decreases-at-some-points-along-the-path),
@@ -20,7 +20,7 @@ A good first guess is `symmetric2` (the default), i.e.
 ```
 
 
-#### *What's all the fuss about normalization? What's wrong with the `symmetric1` recursion I found in Wikipedia/in another implementation?*
+### *What's all the fuss about normalization? What's wrong with the `symmetric1` recursion I found in Wikipedia/in another implementation?*
 
 An alignment computed with a non-normalizable step pattern has two
 serious drawbacks:
@@ -44,15 +44,14 @@ value of `normalizedDistance`.
 
 
 
+### *What about *derivative* dynamic time warping?*
 
-
-#### *What about *derivative* dynamic time warping?*
-
-Use the command
+That means that one aligns the derivatives of the inputs. Just use the command
 [`diff`](http://stat.ethz.ch/R-manual/R-patched/library/base/html/diff.html) to preprocess
 the timeseries.
 
-#### *Why do changes in `dist.method` appear to have no effect?*
+
+### *Why do changes in `dist.method` appear to have no effect?*
 
 Because it only makes a difference when aligning *multivariate*
 timeseries. It specifies the "pointwise" or local distance used
@@ -73,7 +72,7 @@ all.equal(al1,al2)
      
 ```
 
-#### *Can the time/memory requirements be relaxed?*
+### *Can the time/memory requirements be relaxed?*
 
 The first thing you should try is to set the `distance.only=TRUE`
 parameter, which skips backtracing and some object copies. Second,
@@ -81,8 +80,7 @@ consider downsampling the input timeseries.
 
 
 
-
-#### *What is the relation between `dist` and `dtw`?* 
+### *What is the relation between `dist` and `dtw`?* 
 
 There are two *very different*, *totally unrelated* uses for `dist`.
 This is explained at length in the paper, but let's summarize.
@@ -94,17 +92,50 @@ This is explained at length in the paper, but let's summarize.
     next question).
 2.  If you have **many univariate** timeseries, instead of iterating
     over all pairs and applying dtw() to each, you may feed the lot
-    (arranged as a matrix) to `dist` with `method="DTW"`. In this case
+    (arranged as a matrix) to `proxy::dist` with `method="DTW"`. In this case
     your code does NOT explicitly call dtw(). This is equivalent to
     iterating over all pairs; it is also equivalent to using the
     `dtwDist` convenience function.
 
 
+## Windowing
+
+### How do I set custom windows?
+
+The `window.type` argument may be passed a custom window function;
+it must however accept vector arguments. The easiest solution is to
+create a logical matrix of the same size as the cost matrix and wrap it 
+as in the following example:
+
+```r
+win.f <- function(iw,jw,query.size, reference.size, window.size, ...) compare.window 
+# Then use: dtw(x, y, window.type = win.f)
+```
+
+### Is it possible to force alignments to respect specific known control points?
+
+Control points or matching pairs force alignment curves to pass through specific points. 
+An alternative way to see them is that the matching control point define "epochs" which must match with each other. Control points can be enforced through a block-structured windowing function.
+This can be coded rather simply with a window function like the following:
+
+```r
+win.f <- function (iw, jw, window_iw, window_jw,query.size,reference.size,...) 
+  outer(window_iw, window_jw, FUN = "==")
+# Then use: dtw(x, y, window.type = win.f)
+```
+
+Where `window_iw` and `window_jw` would be respectively vectors specifying
+the epochs (as integers or factors) for the input timeseries. 
+The result of the `outer` call can also be modified e.g. to  
+enable some slack around the control points.
+(Thanks to E. Jarochowska)
+
+(Alternatively, perform several alignments for each interval separately).
 
 
 ## Clustering
 
-#### *Can I use the DTW distance to cluster timeseries?*
+### *Can I use the DTW distance to cluster timeseries?*
 
 Of course. You need to start with a dissimilarity matrix, i.e. a
 matrix holding in *i,j* the DTW distance between timeseries *i* and
@@ -112,13 +143,13 @@ matrix holding in *i,j* the DTW distance between timeseries *i* and
 dissimilarity matrix is done differently depending on whether your
 timeseries are univariate or or multivariate: see the next questions.
 
-#### *How do I cluster univariate timeseries of homogeneous length?*
+### *How do I cluster univariate timeseries of homogeneous length?*
 
 Arrange the timeseries (single-variate) in a matrix *as rows*. Make
 sure you use a symmetric pattern. See
 [dtwDist](http://www.rdocumentation.org/packages/dtw/functions/dtwDist).
 
-#### *How do I cluster *multiple* *multivariate* timeseries?*
+### *How do I cluster *multiple* *multivariate* timeseries?*
 
 You have to handle the loop yourself. Assuming you have data arranged
 as `x[time,component,series]`, pseudocode would be:
@@ -130,7 +161,7 @@ as `x[time,component,series]`, pseudocode would be:
 		                    distance.only=T )$normalizedDistance 
 ```
 
-#### *Can I compute a DTW-based dissimilarity matrix out of timeseries of different lengths?*
+### *Can I compute a DTW-based dissimilarity matrix out of timeseries of different lengths?*
 
 Either loop over the inputs yourself, or pad with NAs and use the
 following code:
@@ -152,7 +183,7 @@ following code:
 
 ## Non-discoveries
 
-#### *I've discovered a multidimensional/multivariate version of the DTW algorithm! Shall it be included in the package?*
+### *I've discovered a multidimensional/multivariate version of the DTW algorithm! Shall it be included in the package?*
 
 Alas, most likely you haven't. DTW had been "multidimensional" since
 its conception. Local distances are computed between *N*-dimensional
@@ -165,7 +196,7 @@ types of multi-dimensional local distances that the
 package does, as explained in section 3.6 of the [paper in
 JSS](http://www.jstatsoft.org/v31/i07/).
 
-#### *I've discovered a realtime/early detection version of the DTW algorithm!*
+### *I've discovered a realtime/early detection version of the DTW algorithm!*
 
 Alas, most likely you haven't. A natural solution for real-time
 recognition of timeseries is "unconstrained DTW", which relaxes one or
@@ -186,10 +217,11 @@ alignments (at one or both ends) are available in the *dtw* package,
 as described in section 3.5 of the [JSS
 paper](http://www.jstatsoft.org/v31/i07/).
 
-#### *I've discovered a bug in your backtrack algorithm!*
+### *I've discovered a bug in your backtrack algorithm!*
 
-Alas, most likely you haven't. You may be doing backtracking via
-steepest descent. It's not the correct way to do it. Here's a
+Alas, most likely you haven't. Doing the backtracking step
+may be a bit tricky and, in the general case, doing backtracking via
+steepest descent on the cost matrix is incorrect. Here's a
 counterexample:
 
 ```
@@ -211,8 +243,9 @@ counterexample:
       
 ```
 
-The sum of costs along my warping path (above) is (starting from
-\[1,1\]) 11+10+2\*10+2\*10+11 = 72 which is correct (=g\[4,4\]) . If
-you follow your backtracking "steepest descent" algorithm (red), you
-get the diagonal 11+2\*11+2\*11+2\*11=77 which is wrong.
+The sum of costs along the correct warping path (above, marked with `*..*`),
+starting from `[1,1]`, is 11+10+2\*10+2\*10+11 = 72, which is correct (`=g[4,4]`). 
+If you follow a backtracking "steepest descent"  on the cost matrix 
+(below, marked with `>..<`), you get the diagonal, with
+a total cost of 11+2\*11+2\*11+2\*11=77, which is wrong.
 
