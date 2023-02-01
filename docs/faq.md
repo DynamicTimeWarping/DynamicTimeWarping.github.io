@@ -115,8 +115,10 @@ win.f <- function(iw,jw,query.size, reference.size, window.size, ...) compare.wi
 ### Is it possible to force alignments to respect specific known control points?
 
 Control points or matching pairs force alignment curves to pass through specific points. 
-An alternative way to see them is that the matching control point define "epochs" which must match with each other. Control points can be enforced through a block-structured windowing function.
-This can be coded rather simply with a window function like the following:
+An alternative way to see them is that the matching control point define "epoch boundaries",
+and timeseries inside matching epochs must be aligned with each other.
+This task can be enforced through a block-structured windowing function, which
+can be implemented rather simply e.g. as follows:
 
 ```r
 win.f <- function (iw, jw, window_iw, window_jw,query.size,reference.size,...) 
@@ -124,13 +126,14 @@ win.f <- function (iw, jw, window_iw, window_jw,query.size,reference.size,...)
 # Then use: dtw(x, y, window.type = win.f)
 ```
 
-Where `window_iw` and `window_jw` would be respectively vectors specifying
-the epochs (as integers or factors) for the input timeseries. 
-The result of the `outer` call can also be modified e.g. to  
+Where `window_iw` and `window_jw` would be vectors specifying
+the "epochs" (integers or factors) for the input timeseries. 
+The result of the `outer` call can also be modified further e.g. to
 enable some slack around the control points.
 (Thanks to E. Jarochowska)
 
-(Alternatively, perform several alignments for each interval separately).
+(Alternatively, perform several alignments for each interval separately,
+which is more efficient memory- and time-wise).
 
 
 ## Clustering
