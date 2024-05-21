@@ -12,5 +12,3 @@ These things are currently handled manually by copying them in the `docs` direct
 
  - Thumbnails for py-images
 
-
-
