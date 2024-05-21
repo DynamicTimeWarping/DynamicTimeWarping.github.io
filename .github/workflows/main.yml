@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout dtw-python repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: DynamicTimeWarping/dtw-python 
           path: dtw-python
@@ -27,7 +27,7 @@ jobs:
           version: 1.0
           
       - name: Install Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12' 
           cache: 'pip'
