@@ -109,8 +109,8 @@ as pretty.)
 
 ### Quickstart
 
-Ready-to-try examples are available in the [DTW for R](r) and [DTW for
-Python](python) pages.
+Ready-to-try examples are available in the [DTW for R](r.md) and [DTW for
+Python](python.md) pages.
 
 
 ### Plot gallery
