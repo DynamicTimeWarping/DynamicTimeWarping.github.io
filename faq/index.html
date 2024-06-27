@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>FAQ - The DTW suite</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-3201754-1', 'dynamictimewarping.github.io');
+    ga('send', 'pageview');
+    </script>
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">The DTW suite</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../r/">DTW for R</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../python/">DTW for Python</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">FAQ</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../python/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#frequently-asked-questions">Frequently asked questions</a></li>
+            <li class="second-level"><a href="#general">General</a></li>
+                
+                <li class="third-level"><a href="#how-do-i-choose-a-step-pattern">How do I choose a step pattern?</a></li>
+                <li class="third-level"><a href="#whats-all-the-fuss-about-normalization-whats-wrong-with-the-symmetric1-recursion-i-found-in-wikipediain-another-implementation">What's all the fuss about normalization? What's wrong with the symmetric1 recursion I found in Wikipedia/in another implementation?</a></li>
+                <li class="third-level"><a href="#can-you-explain-it-again-in-different-words">Can you explain it again in different words?</a></li>
+                <li class="third-level"><a href="#what-about-derivative-dynamic-time-warping">What about derivative dynamic time warping?</a></li>
+                <li class="third-level"><a href="#why-do-changes-in-distmethod-appear-to-have-no-effect">Why do changes in dist.method appear to have no effect?</a></li>
+                <li class="third-level"><a href="#can-the-timememory-requirements-be-relaxed">Can the time/memory requirements be relaxed?</a></li>
+                <li class="third-level"><a href="#what-is-the-relation-between-dist-and-dtw">What is the relation between dist and dtw?</a></li>
+            <li class="second-level"><a href="#windowing">Windowing</a></li>
+                
+                <li class="third-level"><a href="#how-do-i-set-custom-windows">How do I set custom windows?</a></li>
+                <li class="third-level"><a href="#is-it-possible-to-force-alignments-to-respect-specific-known-control-points">Is it possible to force alignments to respect specific known control points?</a></li>
+            <li class="second-level"><a href="#clustering">Clustering</a></li>
+                
+                <li class="third-level"><a href="#can-i-use-the-dtw-distance-to-cluster-timeseries">Can I use the DTW distance to cluster timeseries?</a></li>
+                <li class="third-level"><a href="#how-do-i-cluster-univariate-timeseries-of-homogeneous-length">How do I cluster univariate timeseries of homogeneous length?</a></li>
+                <li class="third-level"><a href="#how-do-i-cluster-multiple-multivariate-timeseries">How do I cluster multiple multivariate timeseries?</a></li>
+                <li class="third-level"><a href="#can-i-compute-a-dtw-based-dissimilarity-matrix-out-of-timeseries-of-different-lengths">Can I compute a DTW-based dissimilarity matrix out of timeseries of different lengths?</a></li>
+            <li class="second-level"><a href="#non-discoveries">Non-discoveries</a></li>
+                
+                <li class="third-level"><a href="#ive-discovered-a-multidimensionalmultivariate-version-of-the-dtw-algorithm-shall-it-be-included-in-the-package">I've discovered a multidimensional/multivariate version of the DTW algorithm! Shall it be included in the package?</a></li>
+                <li class="third-level"><a href="#ive-discovered-a-realtimeearly-detection-version-of-the-dtw-algorithm">I've discovered a realtime/early detection version of the DTW algorithm!</a></li>
+                <li class="third-level"><a href="#ive-discovered-a-bug-in-your-backtrack-algorithm">I've discovered a bug in your backtrack algorithm!</a></li>
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="frequently-asked-questions">Frequently asked questions</h1>
+<h2 id="general">General</h2>
+<h3 id="how-do-i-choose-a-step-pattern"><em>How do I choose a step pattern?</em></h3>
+<p>This question has been raised on Stack Overflow; see
+<a href="http://stackoverflow.com/questions/30247132/r-dtw-package-cumulative-cost-matrix-decreases-at-some-points-along-the-path">here</a>,
+<a href="http://stats.stackexchange.com/questions/95920/searching-for-dynamic-time-warping-step-pattern">here</a>
+and
+<a href="http://stackoverflow.com/questions/29399514/how-to-decide-which-steppattern-to-use-in-dtw-algorithm">here</a>.
+A good first guess is <code>symmetric2</code> (the default), i.e.</p>
+<pre><code>         g[i,j] = min(
+             g[i-1,j-1] + 2 * d[i  ,j  ] ,
+             g[i  ,j-1] +     d[i  ,j  ] ,
+             g[i-1,j  ] +     d[i  ,j  ] ,
+         )
+</code></pre>
+<h3 id="whats-all-the-fuss-about-normalization-whats-wrong-with-the-symmetric1-recursion-i-found-in-wikipediain-another-implementation"><em>What's all the fuss about normalization? What's wrong with the <code>symmetric1</code> recursion I found in Wikipedia/in another implementation?</em></h3>
+<p>An alignment computed with a non-normalizable step pattern has two
+serious drawbacks:</p>
+<ol>
+<li>It cannot be meaningfully normalized by timeseries length. Hence,
+    longer timeseries have naturally higher distances, in turn making
+    comparisons impossible.</li>
+<li>It favors diagonal steps, therefore it is not robust: two paths
+    differing for a small local change (eg. horizontal+vertical step
+    rather than diagonal) have very different costs.</li>
+</ol>
+<p>This is discussed in section 3.2 of the <a href="http://www.jstatsoft.org/v31/i07/">JSS
+paper</a>, section 4.2 of the <a href="http://dx.doi.org/10.1016/j.artmed.2008.11.007">AIIM
+paper</a>, section 4.7 of
+Rabiner and Juang's <a href="http://www.worldcat.org/oclc/26674087">Fundamentals of speech
+recognition</a> book, and
+elsewhere. Make sure you familiarize yourself with those references.</p>
+<p>TLDR: just stick to the default <code>symmetric2</code> recursion and use the
+value of <code>normalizedDistance</code>.</p>
+<h3 id="can-you-explain-it-again-in-different-words">Can you explain it again in different words?</h3>
+<p>Normalization means dividing the total distance accumulated along the path by a suitable denominator that accounts for its length. The denominator <strong>must</strong> be <strong>independent</strong> from the actual shape of the path, or the DP formulation doesn't apply.</p>
+<p>Normalizing by path length is crucial when comparing alignments with each other. This implicitly includes, as a notable case, open-end alignments, for which several possible "truncations" are compared with each other.  If one doesn't normalise, it becomes obvious that shorter alignments would be preferred over long ones, because they would sum fewer distances from fewer (possibly just 1) matched points.</p>
+<p><strong>Normalizable</strong> step patterns have the property that a suitable path-independent denominator can be constructed.  Depending on the step pattern, that denominator is usually the length of the query time series, the length of the reference, or their sum. A normalizable step pattern has the property that <strong>all</strong> its production rules (branches) have a <em>total</em> weight which is proportional to the respective displacement either along the query, or along the reference, or their sum.</p>
+<h3 id="what-about-derivative-dynamic-time-warping"><em>What about </em>derivative<em> dynamic time warping?</em></h3>
+<p>That means that one aligns the derivatives of the inputs. Just use the command
+<a href="http://stat.ethz.ch/R-manual/R-patched/library/base/html/diff.html"><code>diff</code></a> to preprocess
+the timeseries.</p>
+<h3 id="why-do-changes-in-distmethod-appear-to-have-no-effect"><em>Why do changes in <code>dist.method</code> appear to have no effect?</em></h3>
+<p>Because it only makes a difference when aligning <em>multivariate</em>
+timeseries. It specifies the "pointwise" or local distance used
+(before the alignment) between the query feature <em>vector</em> at time <em>i</em>,
+<code>query[i,]</code> and the reference feature <em>vector</em> at time <em>j</em>, <code>ref[j,]</code>
+. Most distance functions coincide with the Euclidean distance in the
+one-dimensional case. Note the following:</p>
+<pre><code class="language-r">r&lt;-matrix(runif(10),5)  # A 2-D timeseries of length 5
+s&lt;-matrix(runif(10),5)  # Ditto
+
+myMethod&lt;-&quot;Manhattan&quot; # Or anything else
+al1&lt;-dtw(r,s,dist.method=myMethod)              # Passing the two inputs
+al2&lt;-dtw(proxy::dist(r,s,method=myMethod))      # Equivalent, passing the distance matrix
+
+all.equal(al1,al2) 
+
+</code></pre>
+<h3 id="can-the-timememory-requirements-be-relaxed"><em>Can the time/memory requirements be relaxed?</em></h3>
+<p>The first thing you should try is to set the <code>distance.only=TRUE</code>
+parameter, which skips backtracing and some object copies. Second,
+consider downsampling the input timeseries.</p>
+<h3 id="what-is-the-relation-between-dist-and-dtw"><em>What is the relation between <code>dist</code> and <code>dtw</code>?</em></h3>
+<p>There are two <em>very different</em>, <em>totally unrelated</em> uses for <code>dist</code>.
+This is explained at length in the paper, but let's summarize.</p>
+<ol>
+<li>If you have <strong>two multivariate</strong> timeseries, you can feed them to
+    <code>dist</code> to obtain a <em>local distance matrix</em>. You then pass this
+    matrix to dtw(). This is equivalent to passing the two matrices to
+    the dtw() function and specifying a <code>dist.method</code> (see also the
+    next question).</li>
+<li>If you have <strong>many univariate</strong> timeseries, instead of iterating
+    over all pairs and applying dtw() to each, you may feed the lot
+    (arranged as a matrix) to <code>proxy::dist</code> with <code>method="DTW"</code>. In this case
+    your code does NOT explicitly call dtw(). This is equivalent to
+    iterating over all pairs; it is also equivalent to using the
+    <code>dtwDist</code> convenience function.</li>
+</ol>
+<h2 id="windowing">Windowing</h2>
+<h3 id="how-do-i-set-custom-windows">How do I set custom windows?</h3>
+<p>The <code>window.type</code> argument may be passed a custom window function;
+it must however accept vector arguments. The easiest solution is to
+create a logical matrix of the same size as the cost matrix and wrap it 
+as in the following example:</p>
+<pre><code class="language-r">win.f &lt;- function(iw,jw,query.size, reference.size, window.size, ...) compare.window 
+# Then use: dtw(x, y, window.type = win.f)
+</code></pre>
+<h3 id="is-it-possible-to-force-alignments-to-respect-specific-known-control-points">Is it possible to force alignments to respect specific known control points?</h3>
+<p>Control points or matching pairs force alignment curves to pass through specific points. 
+An alternative way to see them is that the matching control point define "epoch boundaries",
+and timeseries inside matching epochs must be aligned with each other.
+This task can be enforced through a block-structured windowing function, which
+can be implemented rather simply e.g. as follows:</p>
+<pre><code class="language-r">win.f &lt;- function (iw, jw, window_iw, window_jw,query.size,reference.size,...) 
+  outer(window_iw, window_jw, FUN = &quot;==&quot;)
+# Then use: dtw(x, y, window.type = win.f)
+</code></pre>
+<p>Where <code>window_iw</code> and <code>window_jw</code> would be vectors specifying
+the "epochs" (integers or factors) for the input timeseries. 
+The result of the <code>outer</code> call can also be modified further e.g. to
+enable some slack around the control points.
+(Thanks to E. Jarochowska)</p>
+<p>(Alternatively, perform several alignments for each interval separately,
+which is more efficient memory- and time-wise).</p>
+<h2 id="clustering">Clustering</h2>
+<h3 id="can-i-use-the-dtw-distance-to-cluster-timeseries"><em>Can I use the DTW distance to cluster timeseries?</em></h3>
+<p>Of course. You need to start with a dissimilarity matrix, i.e. a
+matrix holding in <em>i,j</em> the DTW distance between timeseries <em>i</em> and
+<em>j</em>. This matrix is fed to the clustering functions. Obtaining the
+dissimilarity matrix is done differently depending on whether your
+timeseries are univariate or or multivariate: see the next questions.</p>
+<h3 id="how-do-i-cluster-univariate-timeseries-of-homogeneous-length"><em>How do I cluster univariate timeseries of homogeneous length?</em></h3>
+<p>Arrange the timeseries (single-variate) in a matrix <em>as rows</em>. Make
+sure you use a symmetric pattern. See
+<a href="http://www.rdocumentation.org/packages/dtw/functions/dtwDist">dtwDist</a>.</p>
+<h3 id="how-do-i-cluster-multiple-multivariate-timeseries"><em>How do I cluster </em>multiple<em> </em>multivariate<em> timeseries?</em></h3>
+<p>You have to handle the loop yourself. Assuming you have data arranged
+as <code>x[time,component,series]</code>, pseudocode would be:</p>
+<pre><code class="language-R"> for (i in 1:N) { 
+    for (j in 1:N) { 
+        result[i,j] &lt;- dtw( dist(x[,,i],x[,,j]), 
+                            distance.only=T )$normalizedDistance 
+</code></pre>
+<h3 id="can-i-compute-a-dtw-based-dissimilarity-matrix-out-of-timeseries-of-different-lengths"><em>Can I compute a DTW-based dissimilarity matrix out of timeseries of different lengths?</em></h3>
+<p>Either loop over the inputs yourself, or pad with NAs and use the
+following code:</p>
+<pre><code class="language-R">    dtwOmitNA &lt;-function (x,y)
+    {
+        a&lt;-na.omit(x)
+        b&lt;-na.omit(y)
+        return(dtw(a,b,distance.only=TRUE)$normalizedDistance)
+    }
+
+    ## create a new entry in the registry with two aliases
+    pr_DB$set_entry(FUN = dtwOmitNA, names = c(&quot;dtwOmitNA&quot;))
+
+    d&lt;-dist(dataset, method = &quot;dtwOmitNA&quot;) 
+</code></pre>
+<h2 id="non-discoveries">Non-discoveries</h2>
+<h3 id="ive-discovered-a-multidimensionalmultivariate-version-of-the-dtw-algorithm-shall-it-be-included-in-the-package"><em>I've discovered a multidimensional/multivariate version of the DTW algorithm! Shall it be included in the package?</em></h3>
+<p>Alas, most likely you haven't. DTW had been "multidimensional" since
+its conception. Local distances are computed between <em>N</em>-dimensional
+vectors; feature vectors have been extensively used in speech
+recognition since the '70s (see e.g. things like MFCC, RASTA,
+cepstrum, etc). Don't worry: several other people have "rediscovered"
+multivariate DTW already. The <em>dtw</em> package supports the numerous
+types of multi-dimensional local distances that the
+<a href="http://cran.r-project.org/web/packages/proxy/index.html">proxy</a>
+package does, as explained in section 3.6 of the <a href="http://www.jstatsoft.org/v31/i07/">paper in
+JSS</a>.</p>
+<h3 id="ive-discovered-a-realtimeearly-detection-version-of-the-dtw-algorithm"><em>I've discovered a realtime/early detection version of the DTW algorithm!</em></h3>
+<p>Alas, most likely you haven't. A natural solution for real-time
+recognition of timeseries is "unconstrained DTW", which relaxes one or
+both endpoint boundary conditions. To my knowledge, the algorithm was
+published as early as 1978 by <a href="http://dx.doi.org/10.1109/TASSP.1978.1163164">Rabiner, Rosenberg, and
+Levinson</a> under the name
+UE2-1: see e.g. the mini-review in (<a href="http://dx.doi.org/10.1016/j.artmed.2008.11.007">Tormene and Giorgino,
+2008</a>). Feel also free
+to learn about the clever algorithms or expositions by <a href="http://dx.doi.org/10.1109/ICDE.2007.368963">Sakurai et al.
+(2007)</a>; <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4470291">Latecki
+(2007)</a>;
+<a href="http://dx.doi.org/10.1109/ICPR.2006.467">Mori et al. (2006)</a>;
+<a href="http://dx.doi.org/10.1016%2F0022-2836%2881%2990087-5">Smith-Waterman
+(1981)</a>;
+<a href="http://dx.doi.org/10.1109/TASSP.1980.1163422">Rabiner and Schmidt
+(1980)</a>; etc. Open-ended
+alignments (at one or both ends) are available in the <em>dtw</em> package,
+as described in section 3.5 of the <a href="http://www.jstatsoft.org/v31/i07/">JSS
+paper</a>.</p>
+<h3 id="ive-discovered-a-bug-in-your-backtrack-algorithm"><em>I've discovered a bug in your backtrack algorithm!</em></h3>
+<p>Alas, most likely you haven't. Doing the backtracking step
+may be a bit tricky and, in the general case, doing backtracking via
+steepest descent on the cost matrix is incorrect. Here's a
+counterexample:</p>
+<pre><code>&gt; library(dtw) 
+&gt; dm&lt;-matrix(10,4,4)+diag(rep(1,4))
+&gt; al&lt;-dtw(dm,k=T,step=symmetric2)   
+&gt; al$localCostMatrix
+      [,1] [,2] [,3] [,4]
+[1,]  *11* *10*  10   10
+[2,]   10   11  *10*  10
+[3,]   10   10   11  *10*
+[4,]   10   10   10  *11*
+&gt; al$costMatrix
+      [,1] [,2] [,3] [,4]
+[1,]  &gt;11&lt;  21   31   41
+[2,]   21  &gt;32&lt;  41   51
+[3,]   31   41  &gt;52&lt;  61
+[4,]   41   51   61  &gt;72&lt;
+
+</code></pre>
+<p>The sum of costs along the correct warping path (above, marked with <code>*..*</code>),
+starting from <code>[1,1]</code>, is 11+10+2*10+2*10+11 = 72, which is correct (<code>=g[4,4]</code>). 
+If you follow a backtracking "steepest descent"  on the cost matrix 
+(below, marked with <code>&gt;..&lt;</code>), you get the diagonal, with
+a total cost of 11+2*11+2*11+2*11=77, which is wrong.</p></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>DTW is &copy; 2006-2022, distributed under the <a href="https://cran.r-project.org/web/licenses/GPL-3">GPLv3 license terms</a>.</small><br>
+            
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
