@@ -37,11 +37,20 @@ paper](http://www.jstatsoft.org/v31/i07/), section 4.2 of the [AIIM
 paper](http://dx.doi.org/10.1016/j.artmed.2008.11.007), section 4.7 of
 Rabiner and Juang's [Fundamentals of speech
 recognition](http://www.worldcat.org/oclc/26674087) book, and
-elsewhere. Make sure you familiarize yourself with those references.  
-  
+elsewhere. Make sure you familiarize yourself with those references.
+
 TLDR: just stick to the default `symmetric2` recursion and use the
 value of `normalizedDistance`.
 
+
+### Can you explain it again in different words?
+
+Normalization means dividing the total distance accumulated along the path by a suitable denominator that accounts for its length. The denominator **must** be **independent** from the actual shape of the path, or the DP formulation doesn't apply.
+
+Normalizing by path length is crucial when comparing alignments with each other. This implicitly includes, as a notable case, open-end alignments, for which several possible "truncations" are compared with each other.  If one doesn't normalise, it becomes obvious that shorter alignments would be preferred over long ones, because they would sum fewer distances from fewer (possibly just 1) matched points.
+
+**Normalizable** step patterns have the property that a suitable path-independent denominator can be constructed.  Depending on the step pattern, that denominator is usually the length of the query time series, the length of the reference, or their sum. A normalizable step pattern has the property that **all** its production rules (branches) have a *total* weight which is proportional to the respective displacement either along the query, or along the reference, or their sum.
+ 
 
 
 ### *What about *derivative* dynamic time warping?*
