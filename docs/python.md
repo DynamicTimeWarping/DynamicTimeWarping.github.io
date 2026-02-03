@@ -17,7 +17,9 @@ issue the following command:
 ```bash
 pip install dtw-python
 ```
-  
+
+Plotting functions require the `matplotlib` package to be installed, either
+manually or via the `dtw-python[plots]` extra. 
 
 ## Getting started
 
