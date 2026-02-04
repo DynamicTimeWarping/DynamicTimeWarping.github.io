@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dtw &#8212; The dtw-python package 1.7.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=9afac83c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=ff7cdc51"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dtwPlot" href="dtw.dtwPlot.html" />
+    <link rel="prev" title="countPaths" href="dtw.countPaths.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          dtw-python</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.7.4</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW suite</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Docs <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dtw.countPaths.html">countPaths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.countPaths.html#dtw.countPaths"><code class="docutils literal notranslate"><span class="pre">countPaths()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">dtw</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dtw.dtw"><code class="docutils literal notranslate"><span class="pre">dtw()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlot.html">dtwPlot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlot.html#dtw.dtwPlot"><code class="docutils literal notranslate"><span class="pre">dtwPlot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotAlignment.html">dtwPlotAlignment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotAlignment.html#dtw.dtwPlotAlignment"><code class="docutils literal notranslate"><span class="pre">dtwPlotAlignment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotDensity.html">dtwPlotDensity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotDensity.html#dtw.dtwPlotDensity"><code class="docutils literal notranslate"><span class="pre">dtwPlotDensity()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotThreeWay.html">dtwPlotThreeWay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotThreeWay.html#dtw.dtwPlotThreeWay"><code class="docutils literal notranslate"><span class="pre">dtwPlotThreeWay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotTwoWay.html">dtwPlotTwoWay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotTwoWay.html#dtw.dtwPlotTwoWay"><code class="docutils literal notranslate"><span class="pre">dtwPlotTwoWay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.itakuraWindow.html">itakuraWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.itakuraWindow.html#dtw.itakuraWindow"><code class="docutils literal notranslate"><span class="pre">itakuraWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.mvmStepPattern.html">mvmStepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.mvmStepPattern.html#dtw.mvmStepPattern"><code class="docutils literal notranslate"><span class="pre">mvmStepPattern()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.noWindow.html">noWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.noWindow.html#dtw.noWindow"><code class="docutils literal notranslate"><span class="pre">noWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html">rabinerJuangStepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html#dtw.rabinerJuangStepPattern"><code class="docutils literal notranslate"><span class="pre">rabinerJuangStepPattern()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.sakoeChibaWindow.html">sakoeChibaWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.sakoeChibaWindow.html#dtw.sakoeChibaWindow"><code class="docutils literal notranslate"><span class="pre">sakoeChibaWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.slantedBandWindow.html">slantedBandWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.slantedBandWindow.html#dtw.slantedBandWindow"><code class="docutils literal notranslate"><span class="pre">slantedBandWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warp.html">warp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.warp.html#dtw.warp"><code class="docutils literal notranslate"><span class="pre">warp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warpArea.html">warpArea</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.warpArea.html#dtw.warpArea"><code class="docutils literal notranslate"><span class="pre">warpArea()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dtw.DTW.html">DTW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.DTW.html#dtw.DTW"><code class="docutils literal notranslate"><span class="pre">DTW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dtw.DTW.html#dtw.DTW.plot"><code class="docutils literal notranslate"><span class="pre">DTW.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.StepPattern.html">StepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern"><code class="docutils literal notranslate"><span class="pre">StepPattern</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.T"><code class="docutils literal notranslate"><span class="pre">StepPattern.T()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.get_n_patterns"><code class="docutils literal notranslate"><span class="pre">StepPattern.get_n_patterns()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.get_n_rows"><code class="docutils literal notranslate"><span class="pre">StepPattern.get_n_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.plot"><code class="docutils literal notranslate"><span class="pre">StepPattern.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">dtw</a><ul>
+<li><a class="reference internal" href="#dtw.dtw"><code class="docutils literal notranslate"><span class="pre">dtw()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">dtw</a><ul>
+<li><a class="reference internal" href="#dtw.dtw"><code class="docutils literal notranslate"><span class="pre">dtw()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <li>
+    <a href="dtw.countPaths.html" title="Previous Chapter: countPaths"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; countPaths</span>
+    </a>
+  </li>
+  <li>
+    <a href="dtw.dtwPlot.html" title="Next Chapter: dtwPlot"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">dtwPlot &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../_sources/api/dtw.dtw.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="dtw">
+<h1>dtw<a class="headerlink" href="#dtw" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="dtw.dtw">
+<span class="sig-prename descclassname"><span class="pre">dtw.</span></span><span class="sig-name descname"><span class="pre">dtw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'euclidean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'symmetric2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_internals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_begin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dtw.dtw" title="Link to this definition">¶</a></dt>
+<dd><p>Compute Dynamic Time Warp and find optimal alignment between two time
+series.</p>
+<p><strong>Details</strong></p>
+<p>The function performs Dynamic Time Warp (DTW) and computes the optimal
+alignment between two time series <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, given as numeric
+vectors. The “optimal” alignment minimizes the sum of distances between
+aligned elements. Lengths of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> may differ.</p>
+<p>The local distance between elements of <code class="docutils literal notranslate"><span class="pre">x</span></code> (query) and <code class="docutils literal notranslate"><span class="pre">y</span></code>
+(reference) can be computed in one of the following ways:</p>
+<ol class="arabic simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">dist_method</span></code> is a string, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are passed to the
+<cite>scipy.spatial.distance.cdist</cite> function with the method given;</p></li>
+<li><p>multivariate time series and arbitrary distance metrics can be
+handled by supplying a local-distance matrix. Element <code class="docutils literal notranslate"><span class="pre">[i,j]</span></code> of
+the local-distance matrix is understood as the distance between
+element <code class="docutils literal notranslate"><span class="pre">x[i]</span></code> and <code class="docutils literal notranslate"><span class="pre">y[j]</span></code>. The distance matrix has therefore
+<code class="docutils literal notranslate"><span class="pre">n=length(x)</span></code> rows and <code class="docutils literal notranslate"><span class="pre">m=length(y)</span></code> columns (see note below).</p></li>
+</ol>
+<p>Several common variants of the DTW recursion are supported via the
+<code class="docutils literal notranslate"><span class="pre">step_pattern</span></code> argument, which defaults to <code class="docutils literal notranslate"><span class="pre">symmetric2</span></code>. Step
+patterns are commonly used to <em>locally</em> constrain the slope of the
+alignment function. See [stepPattern()] for details.</p>
+<p>Windowing enforces a <em>global</em> constraint on the envelope of the warping
+path. It is selected by passing a string or function to the
+<code class="docutils literal notranslate"><span class="pre">window_type</span></code> argument. Commonly used windows are (abbreviations
+allowed):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code> No windowing (default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;sakoechiba&quot;</span></code> A band around main diagonal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;slantedband&quot;</span></code> A band around slanted diagonal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;itakura&quot;</span></code> So-called Itakura parallelogram</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">window_type</span></code> can also be an user-defined windowing function. See
+[dtwWindowingFunctions()] for all available windowing functions, details
+on user-defined windowing, and a discussion of the (mis)naming of the
+“Itakura” parallelogram as a global constraint. Some windowing functions
+may require parameters, such as the <code class="docutils literal notranslate"><span class="pre">window_size</span></code> argument.</p>
+<p>Open-ended alignment, i_e. semi-unconstrained alignment, can be selected
+via the <code class="docutils literal notranslate"><span class="pre">open_end</span></code> switch. Open-end DTW computes the alignment which
+best matches all of the query with a <em>leading part</em> of the reference.
+This is proposed e_g. by Mori (2006), Sakoe (1979) and others.
+Similarly, open-begin is enabled via <code class="docutils literal notranslate"><span class="pre">open_begin</span></code>; it makes sense when
+<code class="docutils literal notranslate"><span class="pre">open_end</span></code> is also enabled (subsequence finding). Subsequence
+alignments are similar e_g. to UE2-1 algorithm by Rabiner (1978) and
+others. Please find a review in Tormene et al. (2009).</p>
+<p>If the warping function is not required, computation can be sped up
+enabling the <code class="docutils literal notranslate"><span class="pre">distance_only=True</span></code> switch, which skips the backtracking
+step. The output object will then lack the <code class="docutils literal notranslate"><span class="pre">index{1,2,1s,2s}</span></code> and
+<code class="docutils literal notranslate"><span class="pre">stepsTaken</span></code> fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – query vector <em>or</em> local cost matrix</p></li>
+<li><p><strong>y</strong> – reference vector, unused if <cite>x</cite> given as cost matrix</p></li>
+<li><p><strong>dist_method</strong> – pointwise (local) distance function to use.</p></li>
+<li><p><strong>step_pattern</strong> – a stepPattern object describing the local warping steps
+allowed with their cost (see [stepPattern()])</p></li>
+<li><p><strong>window_type</strong> – windowing function. Character: “none”, “itakura”,
+“sakoechiba”, “slantedband”, or a function (see details).</p></li>
+<li><p><strong>open_begin</strong> – perform open-ended alignments</p></li>
+<li><p><strong>open_end</strong> – perform open-ended alignments</p></li>
+<li><p><strong>keep_internals</strong> – preserve the cumulative cost matrix, inputs, and other
+internal structures</p></li>
+<li><p><strong>distance_only</strong> – only compute distance (no backtrack, faster)</p></li>
+<li><p><strong>window_args</strong> – additional arguments, passed to the windowing function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object of class <code class="docutils literal notranslate"><span class="pre">DTW</span></code>. See docs for the corresponding properties.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Cost matrices (both input and output) have query elements arranged
+row-wise (first index), and reference elements column-wise (second
+index). They print according to the usual convention, with indexes
+increasing down- and rightwards. Many DTW papers and tutorials show
+matrices according to plot-like conventions, i_e. reference index
+growing upwards. This may be confusing.</p>
+<p>A fast compiled version of the function is normally used. Should it be
+unavailable, the interpreted equivalent will be used as a fall-back with
+a warning.</p>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p>Toni Giorgino. <em>Computing and Visualizing Dynamic Time Warping
+Alignments in R: The dtw Package.</em> Journal of Statistical Software,
+31(7), 1-24. <a class="reference external" href="http://www.jstatsoft.org/v31/i07/">http://www.jstatsoft.org/v31/i07/</a></p></li>
+<li><p>Tormene, P.; Giorgino, T.; Quaglini, S. &amp; Stefanelli, M. <em>Matching
+incomplete time series with dynamic time warping: an algorithm and an
+application to post-stroke rehabilitation.</em> Artif Intell Med, 2009,
+45, 11-34. <a class="reference external" href="http://dx.doi.org/10.1016/j.artmed.2008.11.007">http://dx.doi.org/10.1016/j.artmed.2008.11.007</a></p></li>
+<li><p>Sakoe, H.; Chiba, S., <em>Dynamic programming algorithm optimization for
+spoken word recognition,</em> Acoustics, Speech, and Signal Processing,
+IEEE Transactions on , vol.26, no.1, pp. 43-49, Feb 1978.
+<a class="reference external" href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1163055">http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1163055</a></p></li>
+<li><p>Mori, A.; Uchida, S.; Kurazume, R.; Taniguchi, R.; Hasegawa, T. &amp;
+Sakoe, H. <em>Early Recognition and Prediction of Gestures</em> Proc. 18th
+International Conference on Pattern Recognition ICPR 2006, 2006, 3,
+560-563</p></li>
+<li><p>Sakoe, H. <em>Two-level DP-matching–A dynamic programming-based pattern
+matching algorithm for connected word recognition</em> Acoustics, Speech,
+and Signal Processing, IEEE Transactions on, 1979, 27, 588-595</p></li>
+<li><p>Rabiner L, Rosenberg A, Levinson S (1978). <em>Considerations in dynamic
+time warping algorithms for discrete word recognition.</em> IEEE Trans.
+Acoust., Speech, Signal Process., 26(6), 575-582. ISSN 0096-3518.</p></li>
+<li><p>Muller M. <em>Dynamic Time Warping</em> in <em>Information Retrieval for Music
+and Motion</em>. Springer Berlin Heidelberg; 2007. p. 69-84.
+<a class="reference external" href="http://link.springer.com/chapter/10.1007/978-3-540-74048-3_4">http://link.springer.com/chapter/10.1007/978-3-540-74048-3_4</a></p></li>
+</ol>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">dtw</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>A noisy sine wave as query</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6.28</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">query</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">/</span><span class="mf">10.0</span>
+</pre></div>
+</div>
+<p>A cosine is for reference; sin and cos are offset by 25 samples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reference</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Find the best match</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alignment</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">(</span><span class="n">query</span><span class="p">,</span><span class="n">reference</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Display the mapping, AKA warping function - may be multiple-valued
+Equivalent to: plot(alignment,type=”alignment”)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span><span class="p">;</span>
+<span class="gp">... </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alignment</span><span class="o">.</span><span class="n">index1</span><span class="p">,</span> <span class="n">alignment</span><span class="o">.</span><span class="n">index2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Partial alignments are allowed.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alignmentOBE</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">(</span><span class="n">query</span><span class="p">[</span><span class="mi">44</span><span class="p">:</span><span class="mi">88</span><span class="p">],</span> <span class="n">reference</span><span class="p">,</span>
+<span class="gp">... </span>                     <span class="n">keep_internals</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="gp">... </span>                     <span class="n">step_pattern</span><span class="o">=</span><span class="n">asymmetric</span><span class="p">,</span>
+<span class="gp">... </span>                     <span class="n">open_end</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">open_begin</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alignmentOBE</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;twoway&quot;</span><span class="p">,</span><span class="n">offset</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Subsetting allows warping and unwarping of
+timeseries according to the warping curve.
+See first example below.</p>
+<p>Most useful: plot the warped query along with reference</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">reference</span><span class="p">);</span>
+<span class="gp">... </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alignment</span><span class="o">.</span><span class="n">index2</span><span class="p">,</span><span class="n">query</span><span class="p">[</span><span class="n">alignment</span><span class="o">.</span><span class="n">index1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Plot the (unwarped) query and the inverse-warped reference</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="gp">... </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alignment</span><span class="o">.</span><span class="n">index1</span><span class="p">,</span><span class="n">reference</span><span class="p">[</span><span class="n">alignment</span><span class="o">.</span><span class="n">index2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>A hand-checkable example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ldist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>                    <span class="c1"># Matrix of ones</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ldist</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ldist</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>           <span class="c1"># Mark a clear path of zeroes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ldist</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">.01</span><span class="p">;</span>                         <span class="c1"># Forcely cut the corner</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">(</span><span class="n">ldist</span><span class="p">);</span>                          <span class="c1"># DTW with user-supplied local</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">da</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">(</span><span class="n">ldist</span><span class="p">,</span><span class="n">step_pattern</span><span class="o">=</span><span class="n">asymmetric</span><span class="p">)</span>   <span class="c1"># Also compute the asymmetric</span>
+</pre></div>
+</div>
+<p>Symmetric: alignment follows the low-distance marked path</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">index1</span><span class="p">,</span><span class="n">ds</span><span class="o">.</span><span class="n">index2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Asymmetric: visiting 1 is required twice</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">index1</span><span class="p">,</span><span class="n">da</span><span class="o">.</span><span class="n">index2</span><span class="p">,</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
+<span class="go">2.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">da</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
+<span class="go">2.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Toni Giorgino.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
