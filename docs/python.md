@@ -21,8 +21,8 @@ pip install dtw-python
 Plotting functions require the `matplotlib` package to be installed, either
 manually or via the `dtw-python[plots]` extra. 
 
-A `conda-forge::dtw-python` package is also available, on a 
-best-effort basis (i.e., not well tested).
+A `conda-forge::dtw-python` package is [available](https://anaconda.org/channels/conda-forge/packages/dtw-python/overview) on a 
+best-effort basis (i.e., less well tested).
 
 
 ## Getting started
@@ -36,7 +36,7 @@ Begin from the installed documentation:
 ```
 
 !!! note 
-    Note: the documentation for the Python module is
+    Note: documentation for the Python module is
     auto-generated from the R version. It may contain 
     minor inconsistencies.
 
@@ -144,7 +144,7 @@ The graphing functions have been re-implemented within the
 to customize the plot appearance.
 
 
-## Uncommon installation problems
+## Uncommon build issues
 
 These notes may be relevant when building from source or on
 unusual platforms. 
