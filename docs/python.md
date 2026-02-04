@@ -12,7 +12,7 @@ algorithms and options.
 ## Installation
 
 To install the stable version of the package,
-issue the following command:
+issue the following command (or `uv` equivalents):
 
 ```bash
 pip install dtw-python
@@ -20,6 +20,10 @@ pip install dtw-python
 
 Plotting functions require the `matplotlib` package to be installed, either
 manually or via the `dtw-python[plots]` extra. 
+
+A `conda-forge::dtw-python` package is also available, on a 
+best-effort basis (i.e., not well tested).
+
 
 ## Getting started
 
