@@ -13,7 +13,7 @@ issue the following command in the R console:
 > install.packages("dtw")
 ```
 
-This installs the official package from CRAN and is the only supported installation method. Packages on conda-forge are maintained by third parties and are not supported.
+This installs the official package from CRAN and is the only supported installation method. )Packages on conda-forge are maintained by third parties and are not supported.)
 
 ## Getting started
 

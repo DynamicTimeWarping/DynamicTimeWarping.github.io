@@ -85,7 +85,10 @@ rabinerJuangStepPattern(6,"c").plot()
 [Try online!](https://colab.research.google.com/github/DynamicTimeWarping/notebooks/blob/master/Python_DTW_Quickstart.ipynb)
 
 
-## Differences with R
+## Differences from R
+
+R and Python versions conform with the respective language features
+and coding conventions. Hence:
 
 ### Indices are 0-based
 
@@ -134,7 +137,6 @@ alignment = dtw(query, template, keep.int=TRUE)
 alignment = dtw(query, template, keep_internals=True)
 ```
 
-
 ### Plots
 
 The graphing functions have been re-implemented within the
@@ -142,17 +144,19 @@ The graphing functions have been re-implemented within the
 to customize the plot appearance.
 
 
+## Uncommon installation problems
 
-## Installation notes
+These notes may be relevant when building from source or on
+unusual platforms. 
 
-Pre-installing the `scipy` and `numpy` packages (e.g. with `conda`)
-will speed up installation.
+ * Pre-installing the `scipy` and `numpy` packages (e.g. with `conda`)
+   will speed up installation.
 
-The errors `undefined symbol: alloca` (at runtime), or about
-C99 mode (if compiling from source), are likely due to old
-system or compiler. If using `conda`, the following may help:
+ * Errors like `undefined symbol: alloca` (at runtime), or about
+   C99 mode (if compiling from source), are likely due to old
+   system or compiler. If using `conda`, the following may help:
 
-    conda install gcc_linux-64
-	pip install dtw-python
+        conda install gcc_linux-64
+        pip install dtw-python
 
-Note that you may have to delete cached `.whl` files.
+   Remember to delete cached `.whl` files.
