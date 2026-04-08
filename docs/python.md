@@ -148,8 +148,6 @@ to customize the plot appearance.
 
 AI agents can lookup the documentation at [context7.com](https://context7.com).
 
-<script src="https://context7.com/widget.js" data-library="/dynamictimewarping/dtw-python"></script>
-
 
 ## Uncommon build issues
 
