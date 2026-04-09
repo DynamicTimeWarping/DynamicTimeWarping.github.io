@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dtwPlotAlignment &#8212; The dtw-python package 1.7.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=9afac83c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=ff7cdc51"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dtwPlotDensity" href="dtw.dtwPlotDensity.html" />
+    <link rel="prev" title="dtwPlot" href="dtw.dtwPlot.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          dtw-python</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.7.4</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW suite</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Docs <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dtw.countPaths.html">countPaths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.countPaths.html#dtw.countPaths"><code class="docutils literal notranslate"><span class="pre">countPaths()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtw.html">dtw</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtw.html#dtw.dtw"><code class="docutils literal notranslate"><span class="pre">dtw()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlot.html">dtwPlot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlot.html#dtw.dtwPlot"><code class="docutils literal notranslate"><span class="pre">dtwPlot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">dtwPlotAlignment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dtw.dtwPlotAlignment"><code class="docutils literal notranslate"><span class="pre">dtwPlotAlignment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotDensity.html">dtwPlotDensity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotDensity.html#dtw.dtwPlotDensity"><code class="docutils literal notranslate"><span class="pre">dtwPlotDensity()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotThreeWay.html">dtwPlotThreeWay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotThreeWay.html#dtw.dtwPlotThreeWay"><code class="docutils literal notranslate"><span class="pre">dtwPlotThreeWay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotTwoWay.html">dtwPlotTwoWay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotTwoWay.html#dtw.dtwPlotTwoWay"><code class="docutils literal notranslate"><span class="pre">dtwPlotTwoWay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.itakuraWindow.html">itakuraWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.itakuraWindow.html#dtw.itakuraWindow"><code class="docutils literal notranslate"><span class="pre">itakuraWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.mvmStepPattern.html">mvmStepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.mvmStepPattern.html#dtw.mvmStepPattern"><code class="docutils literal notranslate"><span class="pre">mvmStepPattern()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.noWindow.html">noWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.noWindow.html#dtw.noWindow"><code class="docutils literal notranslate"><span class="pre">noWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html">rabinerJuangStepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html#dtw.rabinerJuangStepPattern"><code class="docutils literal notranslate"><span class="pre">rabinerJuangStepPattern()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.sakoeChibaWindow.html">sakoeChibaWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.sakoeChibaWindow.html#dtw.sakoeChibaWindow"><code class="docutils literal notranslate"><span class="pre">sakoeChibaWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.slantedBandWindow.html">slantedBandWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.slantedBandWindow.html#dtw.slantedBandWindow"><code class="docutils literal notranslate"><span class="pre">slantedBandWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warp.html">warp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.warp.html#dtw.warp"><code class="docutils literal notranslate"><span class="pre">warp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warpArea.html">warpArea</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.warpArea.html#dtw.warpArea"><code class="docutils literal notranslate"><span class="pre">warpArea()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dtw.DTW.html">DTW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.DTW.html#dtw.DTW"><code class="docutils literal notranslate"><span class="pre">DTW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dtw.DTW.html#dtw.DTW.plot"><code class="docutils literal notranslate"><span class="pre">DTW.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.StepPattern.html">StepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern"><code class="docutils literal notranslate"><span class="pre">StepPattern</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.T"><code class="docutils literal notranslate"><span class="pre">StepPattern.T()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.get_n_patterns"><code class="docutils literal notranslate"><span class="pre">StepPattern.get_n_patterns()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.get_n_rows"><code class="docutils literal notranslate"><span class="pre">StepPattern.get_n_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.plot"><code class="docutils literal notranslate"><span class="pre">StepPattern.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">dtwPlotAlignment</a><ul>
+<li><a class="reference internal" href="#dtw.dtwPlotAlignment"><code class="docutils literal notranslate"><span class="pre">dtwPlotAlignment()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">dtwPlotAlignment</a><ul>
+<li><a class="reference internal" href="#dtw.dtwPlotAlignment"><code class="docutils literal notranslate"><span class="pre">dtwPlotAlignment()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <li>
+    <a href="dtw.dtwPlot.html" title="Previous Chapter: dtwPlot"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; dtwPlot</span>
+    </a>
+  </li>
+  <li>
+    <a href="dtw.dtwPlotDensity.html" title="Next Chapter: dtwPlotDensity"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">dtwPlotDensity &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../_sources/api/dtw.dtwPlotAlignment.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="dtwplotalignment">
+<h1>dtwPlotAlignment<a class="headerlink" href="#dtwplotalignment" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="dtw.dtwPlotAlignment">
+<span class="sig-prename descclassname"><span class="pre">dtw.</span></span><span class="sig-name descname"><span class="pre">dtwPlotAlignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Query</span> <span class="pre">index'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Reference</span> <span class="pre">index'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dtw.dtwPlotAlignment" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Toni Giorgino.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
