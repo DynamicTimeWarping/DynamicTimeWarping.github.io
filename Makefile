@@ -1,7 +1,7 @@
 default: serve
 
 serve:
-	mkdocs serve
+	uvx --with mkdocs-cinder mkdocs serve
 
 here = $(shell pwd)
 

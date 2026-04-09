@@ -60,13 +60,65 @@ That means that one aligns the derivatives of the inputs. Just use the command
 the timeseries.
 
 
+### *How do I align multivariate timeseries?*
+
+Pass the query and reference as matrices with one row per time point and
+one column per component. The `dist.method` argument specifies the local
+distance between the feature vector `query[i,]` and the feature vector
+`reference[j,]`. In Python, the corresponding argument is
+`dist_method`. For example:
+
+```r
+t.ref <- seq(0, 2*pi, length.out = 100)
+reference <- cbind(cos(t.ref), sin(t.ref))
+
+u <- seq(0, 1, length.out = 70)
+t.query <- 2*pi*(u^1.5)
+query <- cbind(cos(t.query), sin(t.query))
+
+alignment.mv <- dtw(query, reference,
+                    dist.method = "Euclidean",
+                    keep.internals = TRUE)
+
+## Equivalent precomputed local cost matrix:
+##  local.cost <- proxy::dist(query, reference, method = "Euclidean")
+##  alignment.mv <- dtw(local.cost, keep.internals = TRUE)
+```
+
+Or the Python equivalent:
+
+```python
+import numpy as np
+from dtw import dtw
+
+t_ref = np.linspace(0, 2*np.pi, num=100)
+reference = np.column_stack([np.cos(t_ref), np.sin(t_ref)])
+
+u = np.linspace(0, 1, num=70)
+t_query = 2*np.pi*(u**1.5)
+query = np.column_stack([np.cos(t_query), np.sin(t_query)])
+
+alignment_mv = dtw(query, reference,
+                   dist_method="euclidean",
+                   keep_internals=True)
+
+# Equivalent precomputed local cost matrix:
+#  from scipy.spatial.distance import cdist
+#  local_cost = cdist(query, reference, metric="euclidean")
+#  alignment_mv = dtw(local_cost, keep_internals=True)
+```
+
+
+To restate: DTW aligns two sequences, potentially multivariate, based solely on the dissimilarity (local distance) between their values at all time indices _i_ and _j_. These pairwise distances form an _N_ by _M_ local (or cross-) distance matrix between the sequences. The choice of local distance function is a free parameter, specified by `dist.method`. See also the next FAQ.
+
+
 ### *Why do changes in `dist.method` appear to have no effect?*
 
-Because it only makes a difference when aligning *multivariate*
+Because it mostly makes a difference when aligning *multivariate*
 timeseries. It specifies the "pointwise" or local distance used
 (before the alignment) between the query feature *vector* at time *i*,
-`query[i,]` and the reference feature *vector* at time *j*, `ref[j,]`
-. Most distance functions coincide with the Euclidean distance in the
+`query[i,]` and the reference feature *vector* at time *j*, `ref[j,]` . 
+Most distance functions coincide with the Euclidean distance in the
 one-dimensional case. Note the following:
 
 ```r 
@@ -104,7 +156,8 @@ This is explained at length in the paper, but let's summarize.
     (arranged as a matrix) to `proxy::dist` with `method="DTW"`. In this case
     your code does NOT explicitly call dtw(). This is equivalent to
     iterating over all pairs; it is also equivalent to using the
-    `dtwDist` convenience function.
+    `dtwDist` convenience function. (This shorthand is, admittedly, 
+    somewhat confusing and should be avoided in favour of explicit loops.)
 
 
 ## Windowing
@@ -166,14 +219,32 @@ sure you use a symmetric pattern. See
 You have to handle the loop yourself. Assuming you have data arranged
 as `x[time,component,series]`, pseudocode would be:
 
-```R 
+```R
  for (i in 1:N) { 
     for (j in 1:N) { 
-        result[i,j] <- dtw( dist(x[,,i],x[,,j]), 
+        result[i,j] <- dtw( x[,,i], 
+                            x[,,j], 
 		                    distance.only=T )$normalizedDistance 
 ```
 
-### *Can I compute a DTW-based dissimilarity matrix out of timeseries of different lengths?*
+Should timeseries have different lengths, the appropriate data structure
+is rather a _list of matrices_, e.g.:
+
+```R
+  ## x is a list; x[[i]] is a matrix with rows = time points, cols = components
+  for (i in seq_len(N)) {
+      for (j in seq_len(N)) {
+          result[i,j] <- dtw( x[[i]], 
+                              x[[j]]),
+                              distance.only = TRUE)$normalizedDistance
+      }
+  }
+```
+
+Similar considerations hold for Python.
+
+
+### *Can I compute a DTW-based dissimilarity matrix out of timeseries with NaN values?*
 
 Either loop over the inputs yourself, or pad with NAs and use the
 following code:
@@ -185,11 +256,6 @@ following code:
         b<-na.omit(y)
         return(dtw(a,b,distance.only=TRUE)$normalizedDistance)
     }
-    
-    ## create a new entry in the registry with two aliases
-    pr_DB$set_entry(FUN = dtwOmitNA, names = c("dtwOmitNA"))
-    
-    d<-dist(dataset, method = "dtwOmitNA") 
 ```
 
 
@@ -260,4 +326,3 @@ starting from `[1,1]`, is 11+10+2\*10+2\*10+11 = 72, which is correct (`=g[4,4]`
 If you follow a backtracking "steepest descent"  on the cost matrix 
 (below, marked with `>..<`), you get the diagonal, with
 a total cost of 11+2\*11+2\*11+2\*11=77, which is wrong.
-

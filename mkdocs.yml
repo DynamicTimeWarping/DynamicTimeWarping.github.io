@@ -1,11 +1,14 @@
 site_name: The DTW suite
-theme: cinder
+theme: 
+  name: cinder
+  highlightjs: true
+  hljs_languages:
+    - r
 nav:
   - Home: index.md
   - DTW for R: r.md
   - DTW for Python: python.md
   - FAQ: faq.md
-copyright: 'DTW is &copy; 2006-2022, distributed under the <a href="https://cran.r-project.org/web/licenses/GPL-3">GPLv3 license terms</a>.'
+copyright: 'DTW is &copy; 2006-2026, distributed under the <a href="https://cran.r-project.org/web/licenses/GPL-3">GPLv3 license terms</a>.'
 markdown_extensions:
   - admonition
-google_analytics: ['UA-3201754-1', 'dynamictimewarping.github.io']
