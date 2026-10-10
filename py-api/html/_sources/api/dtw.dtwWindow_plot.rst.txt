@@ -1,0 +1,6 @@
+dtwWindow_plot
+==============
+
+.. currentmodule:: dtw
+
+.. autofunction:: dtwWindow_plot

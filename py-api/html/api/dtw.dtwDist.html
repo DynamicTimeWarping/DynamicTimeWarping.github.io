@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dtwDist &#8212; The dtw-python package 1.9.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=9afac83c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=c4cb232b"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dtwPlot" href="dtw.dtwPlot.html" />
+    <link rel="prev" title="dtw" href="dtw.dtw.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          dtw-python</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.9.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW suite</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Docs <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dtw.countPaths.html">countPaths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.countPaths.html#dtw.countPaths"><code class="docutils literal notranslate"><span class="pre">countPaths()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtw.html">dtw</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtw.html#dtw.dtw"><code class="docutils literal notranslate"><span class="pre">dtw()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">dtwDist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dtw.dtwDist"><code class="docutils literal notranslate"><span class="pre">dtwDist()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlot.html">dtwPlot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlot.html#dtw.dtwPlot"><code class="docutils literal notranslate"><span class="pre">dtwPlot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotAlignment.html">dtwPlotAlignment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotAlignment.html#dtw.dtwPlotAlignment"><code class="docutils literal notranslate"><span class="pre">dtwPlotAlignment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotDensity.html">dtwPlotDensity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotDensity.html#dtw.dtwPlotDensity"><code class="docutils literal notranslate"><span class="pre">dtwPlotDensity()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotThreeWay.html">dtwPlotThreeWay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotThreeWay.html#dtw.dtwPlotThreeWay"><code class="docutils literal notranslate"><span class="pre">dtwPlotThreeWay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotTwoWay.html">dtwPlotTwoWay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotTwoWay.html#dtw.dtwPlotTwoWay"><code class="docutils literal notranslate"><span class="pre">dtwPlotTwoWay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwWindow_plot.html">dtwWindow_plot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwWindow_plot.html#dtw.dtwWindow_plot"><code class="docutils literal notranslate"><span class="pre">dtwWindow_plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.itakuraWindow.html">itakuraWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.itakuraWindow.html#dtw.itakuraWindow"><code class="docutils literal notranslate"><span class="pre">itakuraWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.mvmStepPattern.html">mvmStepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.mvmStepPattern.html#dtw.mvmStepPattern"><code class="docutils literal notranslate"><span class="pre">mvmStepPattern()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.nearOptimalPaths.html">nearOptimalPaths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.nearOptimalPaths.html#dtw.nearOptimalPaths"><code class="docutils literal notranslate"><span class="pre">nearOptimalPaths()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.noWindow.html">noWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.noWindow.html#dtw.noWindow"><code class="docutils literal notranslate"><span class="pre">noWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.permutationTest.html">permutationTest</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.permutationTest.html#dtw.permutationTest"><code class="docutils literal notranslate"><span class="pre">permutationTest()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html">rabinerJuangStepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html#dtw.rabinerJuangStepPattern"><code class="docutils literal notranslate"><span class="pre">rabinerJuangStepPattern()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.sakoeChibaWindow.html">sakoeChibaWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.sakoeChibaWindow.html#dtw.sakoeChibaWindow"><code class="docutils literal notranslate"><span class="pre">sakoeChibaWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.slantedBandWindow.html">slantedBandWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.slantedBandWindow.html#dtw.slantedBandWindow"><code class="docutils literal notranslate"><span class="pre">slantedBandWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warp.html">warp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.warp.html#dtw.warp"><code class="docutils literal notranslate"><span class="pre">warp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warpArea.html">warpArea</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.warpArea.html#dtw.warpArea"><code class="docutils literal notranslate"><span class="pre">warpArea()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dtw.DTW.html">DTW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.DTW.html#dtw.DTW"><code class="docutils literal notranslate"><span class="pre">DTW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dtw.DTW.html#dtw.DTW.plot"><code class="docutils literal notranslate"><span class="pre">DTW.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.PermutationTestResult.html">PermutationTestResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.PermutationTestResult.html#dtw.PermutationTestResult"><code class="docutils literal notranslate"><span class="pre">PermutationTestResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.StepPattern.html">StepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern"><code class="docutils literal notranslate"><span class="pre">StepPattern</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.T"><code class="docutils literal notranslate"><span class="pre">StepPattern.T()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.get_n_patterns"><code class="docutils literal notranslate"><span class="pre">StepPattern.get_n_patterns()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.get_n_rows"><code class="docutils literal notranslate"><span class="pre">StepPattern.get_n_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.plot"><code class="docutils literal notranslate"><span class="pre">StepPattern.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">dtwDist</a><ul>
+<li><a class="reference internal" href="#dtw.dtwDist"><code class="docutils literal notranslate"><span class="pre">dtwDist()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">dtwDist</a><ul>
+<li><a class="reference internal" href="#dtw.dtwDist"><code class="docutils literal notranslate"><span class="pre">dtwDist()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/api/dtw.dtwDist.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="dtwdist">
+<h1>dtwDist<a class="headerlink" href="#dtwdist" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="dtw.dtwDist">
+<span class="sig-prename descclassname"><span class="pre">dtw.</span></span><span class="sig-name descname"><span class="pre">dtwDist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">my</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dtw.dtwDist" title="Link to this definition">¶</a></dt>
+<dd><p>Compute a dissimilarity matrix</p>
+<p>Compute the dissimilarity matrix between a set of single-variate
+timeseries.</p>
+<p><strong>Details</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">dtwDist</span></code> computes a dissimilarity matrix, akin to
+<code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.cdist</span></code>, based on the Dynamic Time Warping
+definition of a distance between single-variate timeseries.</p>
+<p>The timeseries are stored as rows in the matrix argument <code class="docutils literal notranslate"><span class="pre">mx</span></code>. In
+other words, if <code class="docutils literal notranslate"><span class="pre">mx</span></code> is an N * T matrix, <code class="docutils literal notranslate"><span class="pre">dtwDist</span></code> will build N *
+N ordered pairs of timeseries, perform the corresponding N * N
+[dtw()] alignments, and return all of the results in a matrix. Each of
+the timeseries is T elements long. Timeseries of different lengths can
+be passed as a list of 1-D arrays instead.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dtwDist</span></code> returns a square matrix, rather than the condensed form
+returned by <code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.pdist</span></code>. This makes sense because
+in general the DTW “distance” is not symmetric (see e.g. asymmetric
+step patterns).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mx</strong> – numeric matrix, containing timeseries as rows, or a list of 1-D arrays</p></li>
+<li><p><strong>my</strong> – numeric matrix, containing timeseries as rows, or a list of 1-D arrays (for cross-distance). Defaults to <code class="docutils literal notranslate"><span class="pre">mx</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – arguments passed to the [dtw()] call</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>A matrix whose element <code class="docutils literal notranslate"><span class="pre">[i,j]</span></code> holds the Dynamic Time Warp distance</p></li>
+<li><p>between row <code class="docutils literal notranslate"><span class="pre">i</span></code> (query) of <code class="docutils literal notranslate"><span class="pre">mx</span></code> and row <code class="docutils literal notranslate"><span class="pre">j</span></code> (reference) of</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">dtw(mx[i],</span> <span class="pre">my[j]).distance</span></code>. Its shape is</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(len(mx),</span> <span class="pre">len(my))</span></code>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>To convert a square dissimilarity matrix to the condensed form used by
+<code class="docutils literal notranslate"><span class="pre">scipy.cluster.hierarchy</span></code>, use a suitable symmetrization strategy (see
+examples) and then <code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.squareform</span></code>.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">dtw</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+<p>Symmetric step pattern =&gt; symmetric dissimilarity matrix</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dtwDist</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="go">array([[ 0.,  5., 10., 15.],</span>
+<span class="go">       [ 5.,  0.,  5., 10.],</span>
+<span class="go">       [10.,  5.,  0.,  5.],</span>
+<span class="go">       [15., 10.,  5.,  0.]])</span>
+</pre></div>
+</div>
+<p>Find the optimal warping _and_ scale factor at the same time.
+(There may be a better, analytic way)</p>
+<p>Prepare a query and a reference</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">query</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reference</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Make a set of several references, scaled from 0 to 3 in .1 increments.
+Put them in a matrix, in rows</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scaleSet</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">referenceSet</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">scaleSet</span><span class="p">,</span> <span class="n">reference</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The query has to be made into a 1-row matrix.
+Perform all of the alignments at once, and normalize the result.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">distanceSet</span> <span class="o">=</span> <span class="n">dtwDist</span><span class="p">(</span><span class="n">query</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:],</span> <span class="n">referenceSet</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The optimal scale for the reference is close to 1.0</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scaleSet</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">scaleSet</span> <span class="o">*</span> <span class="n">distanceSet</span><span class="p">)]</span>
+<span class="go">np.float64(1.1)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scaleSet</span><span class="p">,</span> <span class="n">scaleSet</span> <span class="o">*</span> <span class="n">distanceSet</span><span class="p">,</span> <span class="s2">"o-"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Asymmetric step pattern: we can either disregard part of the pairs,
+or average with the transpose</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dm</span> <span class="o">=</span> <span class="n">dtwDist</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">step_pattern</span><span class="o">=</span><span class="n">asymmetric</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Symmetrize by averaging:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dms</span> <span class="o">=</span> <span class="p">(</span><span class="n">dm</span> <span class="o">+</span> <span class="n">dm</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Check definition</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">dm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">dtw</span><span class="p">(</span><span class="n">mm</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">mm</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">step_pattern</span><span class="o">=</span><span class="n">asymmetric</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Toni Giorgino.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+# Options can be placed after GAL-OPTIONS tag.
+# They should be on one line and entered like they would
+# on the command line. e.g. GAL-OPTIONS -ft -fs -rs y
+GAL-OPTIONS  -uo -ft -fs -ty 150 -iw 4 -no-sxy -no-gi
+#
+##############################################
+# Below are the index options with their values and
+# the file names and descriptions
+# All are seperated by '----' this MUST remain.
+# The file name and description must be on ONE line. The
+# description can contain html tags if desired.
+# You can change the order and it will be preserved when
+# you generate the index.html and slide pages.
+##############################################
+#
+INDEX-TITLEBAR ---- Plot gallery for Package <a href="http://dtw.r-forge.r-project.org/">dtw</a>
+INDEX-TITLE ---- Plot gallery for Package <a href="http://dtw.r-forge.r-project.org/">dtw</a>
+INDEX-HEADER ---- To generate: see text<br>on the right of each image
+INDEX-FOOTER ---- 
+#
+example00.png ---- 
+example01.png ---- 
+example02.png ---- 
+example03.png ---- 
+example04.png ---- 
+example05.png ---- 
+example06.png ---- 
+example07.png ---- 
+example08.png ---- 
+example09.png ---- 
+example10.png ---- 
+example11.png ---- 
+example12.png ---- 
+example13.png ---- 
+example14.png ---- 
+example15.png ---- 
+example16.png ---- 
+example17.png ---- 
+example18.png ---- 
+example19.png ---- 
+example20.png ---- 

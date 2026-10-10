@@ -1,0 +1,6 @@
+dtwDist
+=======
+
+.. currentmodule:: dtw
+
+.. autofunction:: dtwDist

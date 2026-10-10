@@ -1,0 +1,6 @@
+nearOptimalPaths
+================
+
+.. currentmodule:: dtw
+
+.. autofunction:: nearOptimalPaths

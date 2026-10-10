@@ -1,0 +1,6 @@
+permutationTest
+===============
+
+.. currentmodule:: dtw
+
+.. autofunction:: permutationTest

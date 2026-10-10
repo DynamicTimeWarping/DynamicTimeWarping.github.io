@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>permutationTest &#8212; The dtw-python package 1.9.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=9afac83c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=c4cb232b"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rabinerJuangStepPattern" href="dtw.rabinerJuangStepPattern.html" />
+    <link rel="prev" title="noWindow" href="dtw.noWindow.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          dtw-python</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.9.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://dynamictimewarping.github.io">&#127968; The DTW suite</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Docs <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dtw.countPaths.html">countPaths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.countPaths.html#dtw.countPaths"><code class="docutils literal notranslate"><span class="pre">countPaths()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtw.html">dtw</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtw.html#dtw.dtw"><code class="docutils literal notranslate"><span class="pre">dtw()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwDist.html">dtwDist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwDist.html#dtw.dtwDist"><code class="docutils literal notranslate"><span class="pre">dtwDist()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlot.html">dtwPlot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlot.html#dtw.dtwPlot"><code class="docutils literal notranslate"><span class="pre">dtwPlot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotAlignment.html">dtwPlotAlignment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotAlignment.html#dtw.dtwPlotAlignment"><code class="docutils literal notranslate"><span class="pre">dtwPlotAlignment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotDensity.html">dtwPlotDensity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotDensity.html#dtw.dtwPlotDensity"><code class="docutils literal notranslate"><span class="pre">dtwPlotDensity()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotThreeWay.html">dtwPlotThreeWay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotThreeWay.html#dtw.dtwPlotThreeWay"><code class="docutils literal notranslate"><span class="pre">dtwPlotThreeWay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwPlotTwoWay.html">dtwPlotTwoWay</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwPlotTwoWay.html#dtw.dtwPlotTwoWay"><code class="docutils literal notranslate"><span class="pre">dtwPlotTwoWay()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.dtwWindow_plot.html">dtwWindow_plot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.dtwWindow_plot.html#dtw.dtwWindow_plot"><code class="docutils literal notranslate"><span class="pre">dtwWindow_plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.itakuraWindow.html">itakuraWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.itakuraWindow.html#dtw.itakuraWindow"><code class="docutils literal notranslate"><span class="pre">itakuraWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.mvmStepPattern.html">mvmStepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.mvmStepPattern.html#dtw.mvmStepPattern"><code class="docutils literal notranslate"><span class="pre">mvmStepPattern()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.nearOptimalPaths.html">nearOptimalPaths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.nearOptimalPaths.html#dtw.nearOptimalPaths"><code class="docutils literal notranslate"><span class="pre">nearOptimalPaths()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.noWindow.html">noWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.noWindow.html#dtw.noWindow"><code class="docutils literal notranslate"><span class="pre">noWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">permutationTest</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dtw.permutationTest"><code class="docutils literal notranslate"><span class="pre">permutationTest()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html">rabinerJuangStepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.rabinerJuangStepPattern.html#dtw.rabinerJuangStepPattern"><code class="docutils literal notranslate"><span class="pre">rabinerJuangStepPattern()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.sakoeChibaWindow.html">sakoeChibaWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.sakoeChibaWindow.html#dtw.sakoeChibaWindow"><code class="docutils literal notranslate"><span class="pre">sakoeChibaWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.slantedBandWindow.html">slantedBandWindow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.slantedBandWindow.html#dtw.slantedBandWindow"><code class="docutils literal notranslate"><span class="pre">slantedBandWindow()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warp.html">warp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.warp.html#dtw.warp"><code class="docutils literal notranslate"><span class="pre">warp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.warpArea.html">warpArea</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.warpArea.html#dtw.warpArea"><code class="docutils literal notranslate"><span class="pre">warpArea()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dtw.DTW.html">DTW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.DTW.html#dtw.DTW"><code class="docutils literal notranslate"><span class="pre">DTW</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dtw.DTW.html#dtw.DTW.plot"><code class="docutils literal notranslate"><span class="pre">DTW.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.PermutationTestResult.html">PermutationTestResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.PermutationTestResult.html#dtw.PermutationTestResult"><code class="docutils literal notranslate"><span class="pre">PermutationTestResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dtw.StepPattern.html">StepPattern</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern"><code class="docutils literal notranslate"><span class="pre">StepPattern</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.T"><code class="docutils literal notranslate"><span class="pre">StepPattern.T()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.get_n_patterns"><code class="docutils literal notranslate"><span class="pre">StepPattern.get_n_patterns()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.get_n_rows"><code class="docutils literal notranslate"><span class="pre">StepPattern.get_n_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="dtw.StepPattern.html#dtw.StepPattern.plot"><code class="docutils literal notranslate"><span class="pre">StepPattern.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">permutationTest</a><ul>
+<li><a class="reference internal" href="#dtw.permutationTest"><code class="docutils literal notranslate"><span class="pre">permutationTest()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">permutationTest</a><ul>
+<li><a class="reference internal" href="#dtw.permutationTest"><code class="docutils literal notranslate"><span class="pre">permutationTest()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/api/dtw.permutationTest.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="permutationtest">
+<h1>permutationTest<a class="headerlink" href="#permutationtest" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="dtw.permutationTest">
+<span class="sig-prename descclassname"><span class="pre">dtw.</span></span><span class="sig-name descname"><span class="pre">permutationTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alignment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permute_side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'query'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permute_what</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'values'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">statistic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'distance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_distribution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dtw.permutationTest" title="Link to this definition">¶</a></dt>
+<dd><p>DTW permutation test</p>
+<p>Compare an observed DTW statistic with statistics obtained by permuting
+values or increments of the query, reference, or both, and recomputing
+the alignment for every replicate. The choice of permutation defines the
+null hypothesis and determines the interpretation of the returned
+p-value.</p>
+<p><strong>Details</strong></p>
+<p>The comparison asks: how unusually small is the observed DTW distance
+relative to distances obtained after randomly reordering the query,
+reference, or both? Correlation statistics instead assess how unusually
+large the correlation between the aligned series is.</p>
+<p>Each replicate permutes either the observations
+(<code class="docutils literal notranslate"><span class="pre">permute_what=&quot;values&quot;</span></code>) or their consecutive increments
+(<code class="docutils literal notranslate"><span class="pre">permute_what=&quot;increments&quot;</span></code>), then computes a new optimal alignment.
+The resulting statistics form a simulated distribution under the
+selected null hypothesis. The observed statistic is compared with this
+distribution, rather than with distances along the original, fixed
+warping path.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">statistic</span></code> argument selects the ordinary DTW distance, its
+normalized counterpart, or a correlation coefficient between the aligned
+univariate series. Setting <code class="docutils literal notranslate"><span class="pre">return_distribution=True</span></code> includes the
+simulated statistics in the result’s <code class="docutils literal notranslate"><span class="pre">null_distribution</span></code> attribute,
+allowing them to be plotted alongside the observed statistic.</p>
+<p>The scientific interpretation depends on which reorderings are assumed
+possible under the null. See <strong>Null hypotheses</strong> and <strong>Interpretation</strong>,
+and consult <strong>Requirements</strong> before using the reported p-value.</p>
+<p><strong>Null hypotheses</strong></p>
+<p>Both methods permute without replacement within each replicate.
+Permutations are sampled independently across replicates, so the same
+permutation can occur more than once, including the original ordering.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">permute_what=&quot;values&quot;</span></code>, the null assumes that, conditional on
+the observed values, all temporal orderings of the shuffled series are
+equally likely. This exchangeability must also hold conditional on the
+unshuffled series when one side is held fixed. Independent, identically
+distributed observations independent of the other series satisfy this
+assumption. The permutation preserves the observed value distribution
+but destroys temporal structure such as autocorrelation, trends, and
+cycles. For multivariate series, entire observation rows are permuted
+together, preserving the relationships between components within each
+row.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">permute_what=&quot;increments&quot;</span></code>, the null assumes that, conditional
+on the starting value and observed increments, all orderings of those
+increments are equally likely, also conditional on any fixed opposite
+series. The increments are consecutive differences,
+<code class="docutils literal notranslate"><span class="pre">numpy.diff(x,</span> <span class="pre">axis=0)</span></code>, without division by time intervals. They are
+permuted and cumulatively summed from the original starting value. This
+preserves the increment distribution and both endpoints (up to numerical
+precision), but generally changes the distribution of the series’
+values. Multivariate increment rows are permuted together. A random walk
+with independent, identically distributed increments, independent of
+the other series, is one setting where this assumption is appropriate.
+Correlated increments, mean reversion, oscillations, or changing
+increment distributions can violate it. Preserving endpoints does not
+make this method generally more conservative than value permutation.</p>
+<p><code class="docutils literal notranslate"><span class="pre">permute_side=&quot;query&quot;</span></code> holds the reference fixed; <code class="docutils literal notranslate"><span class="pre">&quot;reference&quot;</span></code>
+holds the query fixed. With <code class="docutils literal notranslate"><span class="pre">&quot;both&quot;</span></code>, the two series are permuted
+independently, and the null requires invariance under these independent
+reorderings. Choosing a different side can change the null distribution
+and the assumptions needed.</p>
+<p><strong>Interpretation</strong></p>
+<p>For a distance statistic, the usual alternative is <code class="docutils literal notranslate"><span class="pre">&quot;less&quot;</span></code>: the
+observed distance is unusually small relative to the chosen permutation
+distribution. <code class="docutils literal notranslate"><span class="pre">&quot;greater&quot;</span></code> asks whether it is unusually large, and
+<code class="docutils literal notranslate"><span class="pre">&quot;two-sided&quot;</span></code> considers both tails. For correlation statistics, the
+usual alternative is <code class="docutils literal notranslate"><span class="pre">&quot;greater&quot;</span></code>. Each replicate is realigned before
+computing its correlation; the null correlation distribution need not be
+centered at zero.</p>
+<p>Neither permutation scheme provides a general test of independence
+between arbitrary time series. Independent smooth series can align
+better than shuffled series because of their temporal structure. With a
+correctly calibrated test, a small p-value is evidence against the
+specified permutation null; it does not by itself establish dependence
+or a scientifically meaningful correspondence. A large p-value indicates
+insufficient evidence against that null, rather than evidence that the
+series have no temporal ordering.</p>
+<p>Choose the null from the scientific question and sampling process before
+examining results. Neither the default <code class="docutils literal notranslate"><span class="pre">&quot;values&quot;</span></code> nor <code class="docutils literal notranslate"><span class="pre">&quot;increments&quot;</span></code>
+is appropriate for every time series. In particular, increment
+permutation of independent, identically distributed observations is
+invalid: their increments are negatively autocorrelated, and reordering
+them produces random walks that wander far from the original values.
+Other designs may call for permutation of whole-series pairings across
+exchangeable trials, calibrated time-shift tests, block permutations, or
+Fourier surrogates that preserve spectral structure. These methods have
+their own assumptions and are not implemented here. See Schreiber and
+Schmitz (2000) for a discussion of surrogate methods and their
+interpretation.</p>
+<p><strong>P-value calculation</strong></p>
+<p>For <code class="docutils literal notranslate"><span class="pre">alternative=&quot;less&quot;</span></code>, let <code class="docutils literal notranslate"><span class="pre">b</span></code> count simulated statistics less
+than or equal to the observed statistic. For <code class="docutils literal notranslate"><span class="pre">&quot;greater&quot;</span></code>, count those
+greater than or equal to it. The respective one-sided p-value is
+<code class="docutils literal notranslate"><span class="pre">(b</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">/</span> <span class="pre">(R</span> <span class="pre">+</span> <span class="pre">1)</span></code>. This includes the observed ordering and prevents
+zero p-values from a finite simulation; see Phipson and Smyth (2010). To
+accommodate numerical roundoff, statistics within
+<code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">*</span> <span class="pre">eps</span> <span class="pre">*</span> <span class="pre">max(1,</span> <span class="pre">abs(observed))</span></code> of the observed statistic, where
+<code class="docutils literal notranslate"><span class="pre">eps</span></code> is the machine epsilon, are counted as ties in both tails.</p>
+<p>The two-sided p-value is twice the smaller of these one-sided p-values,
+capped at one. This convention does not assume a symmetric null
+distribution. Tied distributions give a p-value of one when all
+replicates match the observed statistic. The correction does not
+compensate for an inappropriate null model; the exchangeability
+assumptions still apply.</p>
+<p><strong>Requirements</strong></p>
+<p>Step patterns, open-begin/open-end settings, the window function and its
+<code class="docutils literal notranslate"><span class="pre">window_args</span></code> are reused for every alignment. Increment permutation
+also requires the stored distance method. Custom window functions must
+reproduce the original window; avoid functions whose behavior depends on
+mutable external state. Choose alignment settings before inspecting test
+results.</p>
+<p>Correlation statistics require the original univariate series. If the
+input was constructed with <code class="docutils literal notranslate"><span class="pre">distance_only=True</span></code>, its path is
+recomputed. Both the observed statistic and every simulated statistic
+must be finite. Undefined correlations, for example from constant
+aligned series or fewer than two aligned observations, cause an error.
+Failed replicates are not discarded or resampled. A series of length one
+can be used for distance statistics; permuting its increments leaves it
+unchanged.</p>
+<p>Results are reproducible by passing a seed or a
+<code class="docutils literal notranslate"><span class="pre">numpy.random.Generator</span></code> as <code class="docutils literal notranslate"><span class="pre">rng</span></code>. The random streams differ from
+R’s, so the R and Python packages give different (but equally valid)
+null distributions for the same seed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>alignment</strong> – An object of class <cite>DTW</cite>, constructed with <code class="docutils literal notranslate"><span class="pre">keep_internals=True</span></code>. Increment permutation and correlation statistics additionally require the original query and reference; an alignment computed from a precomputed local cost matrix is insufficient.</p></li>
+<li><p><strong>R</strong> – Number of permutation replicates, a positive integer.</p></li>
+<li><p><strong>alternative</strong> – <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default) selects <code class="docutils literal notranslate"><span class="pre">&quot;less&quot;</span></code> for distance statistics and <code class="docutils literal notranslate"><span class="pre">&quot;greater&quot;</span></code> for correlations. Alternatively, a string: <code class="docutils literal notranslate"><span class="pre">&quot;less&quot;</span></code> for unusually small distances, <code class="docutils literal notranslate"><span class="pre">&quot;greater&quot;</span></code> for unusually large distances, or <code class="docutils literal notranslate"><span class="pre">&quot;two-sided&quot;</span></code> for either tail. For correlations these directions refer to the correlation coefficient, rather than the distance.</p></li>
+<li><p><strong>permute_side</strong> – Which series to permute: <code class="docutils literal notranslate"><span class="pre">&quot;query&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;reference&quot;</span></code>, or independently <code class="docutils literal notranslate"><span class="pre">&quot;both&quot;</span></code>. See <strong>Null hypotheses</strong>.</p></li>
+<li><p><strong>permute_what</strong> – What to permute: observation values (<code class="docutils literal notranslate"><span class="pre">&quot;values&quot;</span></code>, the default) or consecutive increments (<code class="docutils literal notranslate"><span class="pre">&quot;increments&quot;</span></code>). Neither choice is a general null model for unrelated time series.</p></li>
+<li><p><strong>statistic</strong> – <code class="docutils literal notranslate"><span class="pre">&quot;distance&quot;</span></code> for the DTW distance or <code class="docutils literal notranslate"><span class="pre">&quot;normalizedDistance&quot;</span></code> for its normalized counterpart. The latter requires a normalizable step pattern. <code class="docutils literal notranslate"><span class="pre">&quot;pearson&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;spearman&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;kendall&quot;</span></code> select the corresponding correlation coefficient between the aligned univariate series.</p></li>
+<li><p><strong>return_distribution</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, include the simulated statistics as the <code class="docutils literal notranslate"><span class="pre">null_distribution</span></code> attribute of the result. This does not validate the chosen null model.</p></li>
+<li><p><strong>rng</strong> – Seed or <code class="docutils literal notranslate"><span class="pre">numpy.random.Generator</span></code> used for the permutations, passed to <code class="docutils literal notranslate"><span class="pre">numpy.random.default_rng</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>A [PermutationTestResult] object, with the observed statistic in</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">estimate</span></code>, the permutation p-value in <code class="docutils literal notranslate"><span class="pre">p_value</span></code> and the number of</p></li>
+<li><p>replicates in <code class="docutils literal notranslate"><span class="pre">replicates</span></code>. If <code class="docutils literal notranslate"><span class="pre">return_distribution=True</span></code>, its</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">null_distribution</span></code> attribute is a numeric array of length <code class="docutils literal notranslate"><span class="pre">R</span></code></p></li>
+<li><p>containing the simulated statistics; otherwise it is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p>Schreiber, T. and Schmitz, A. (2000). Surrogate time series. <em>Physica
+D</em>, 142, 346–382.
+<a class="reference external" href="https://doi.org/10.1016/S0167-2789(00)00043-9">doi:10.1016/S0167-2789(00)00043-9</a></p></li>
+<li><p>Phipson, B. and Smyth, G. K. (2010). Permutation P-values should never
+be zero: calculating exact P-values when permutations are randomly
+drawn. <em>Statistical Applications in Genetics and Molecular Biology</em>,
+9, Article 39.
+<a class="reference external" href="https://doi.org/10.2202/1544-6115.1585">doi:10.2202/1544-6115.1585</a></p></li>
+</ol>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">dtw</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Value permutation: independent observations with exchangeable ordering.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">al_values</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">),</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">),</span>
+<span class="gp">... </span>                <span class="n">keep_internals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">permutationTest</span><span class="p">(</span><span class="n">al_values</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">199</span><span class="p">,</span> <span class="n">permute_what</span><span class="o">=</span><span class="s2">"values"</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">res</span><span class="o">.</span><span class="n">p_value</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d_values</span> <span class="o">=</span> <span class="n">permutationTest</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">al_values</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">199</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">"less"</span><span class="p">,</span> <span class="n">permute_side</span><span class="o">=</span><span class="s2">"query"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">permute_what</span><span class="o">=</span><span class="s2">"values"</span><span class="p">,</span> <span class="n">statistic</span><span class="o">=</span><span class="s2">"normalizedDistance"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">return_distribution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span><span class="o">.</span><span class="n">null_distribution</span>
+</pre></div>
+</div>
+<p>Increment permutation: independent walks with exchangeable increments.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">query</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">39</span><span class="p">))])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reference</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">39</span><span class="p">))])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">al_walk</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">reference</span><span class="p">,</span> <span class="n">keep_internals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d_walk</span> <span class="o">=</span> <span class="n">permutationTest</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">al_walk</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">199</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s2">"less"</span><span class="p">,</span> <span class="n">permute_side</span><span class="o">=</span><span class="s2">"query"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">permute_what</span><span class="o">=</span><span class="s2">"increments"</span><span class="p">,</span> <span class="n">statistic</span><span class="o">=</span><span class="s2">"normalizedDistance"</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">return_distribution</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span><span class="o">.</span><span class="n">null_distribution</span>
+</pre></div>
+</div>
+<p>Each observed distance is compared with its own permutation distribution.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">d_values</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">al_values</span><span class="o">.</span><span class="n">normalizedDistance</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Value permutation"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">d_walk</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">al_walk</span><span class="o">.</span><span class="n">normalizedDistance</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Increment permutation"</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Toni Giorgino.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 9.1.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

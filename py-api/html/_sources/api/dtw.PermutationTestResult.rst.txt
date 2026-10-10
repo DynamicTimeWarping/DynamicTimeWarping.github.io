@@ -1,0 +1,7 @@
+PermutationTestResult
+=====================
+
+.. currentmodule:: dtw
+
+.. autoclass:: PermutationTestResult
+   :show-inheritance:
